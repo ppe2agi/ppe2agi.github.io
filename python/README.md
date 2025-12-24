@@ -1,6 +1,10 @@
-# Python 学习笔记
+# 🐍 Python 学习笔记 <sub>made by chanvel</sub>
 
-## 文件名: hello_world.py
+这里记录了从 .py 文件中自动提取的详细源码和案例。
+
+---
+
+### 📄 文件名: hello_world.py
 
 ```python
 #!/usr/bin/python3
@@ -21,7 +25,8 @@ input()
 ```
 
 ---
-## 文件名: test.py
+
+### 📄 文件名: test.py
 
 ```python
 print('test')
@@ -32,3 +37,4 @@ print('test')
 ```
 
 ---
+
