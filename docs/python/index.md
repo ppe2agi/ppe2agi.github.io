@@ -1,12 +1,10 @@
-# 🏠 我的代码库
+# 🤔 Python 语言案例
 
-<sub>made by chanvel | 更新日期: 2025-12-24</sub>
-
-## 🐍 Python 案例源码
+<sub>此页面由脚本自动生成，收录了 `python/` 目录下的所有源码。</sub>
 
 ---
 
-### 📄 hello_world.py
+### 📄 案例: hello_world.py
 
 ```python
 #!/usr/bin/python3
@@ -28,7 +26,7 @@ input()
 
 ---
 
-### 📄 test.py
+### 📄 案例: test.py
 
 ```python
 print('test')
