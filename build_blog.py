@@ -6,9 +6,8 @@ current_date = datetime.now().strftime('%Y-%m-%d')
 
 # 1. 生成根目录的总 README
 with open('README.md', 'w', encoding='utf-8') as f:
-    f.write("# 技术博客总入口\n")
-    # 将副标题放在这里，并使用小字号标签
-    f.write("<sub>made by chanvel</sub>\n\n") 
+    f.write("# 技术博客总入口\n") # 这里只用一个换行
+    f.write("<sub>made by chanvel</sub>\n\n") # 这里再空两行进入下一段
     f.write("## 学习分类\n")
     f.write("- [🐍 Python 语言学习](./python/README.md)\n")
     f.write(f"\n> 最近更新: {current_date}")
