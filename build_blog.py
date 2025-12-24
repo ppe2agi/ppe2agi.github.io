@@ -1,27 +1,21 @@
 import os
 
-def generate_blog():
-    # 博客首页标题
-    content = "# 我的 Python 学习自动化博客\n\n"
-    content += "这是由脚本自动生成的项目文档，更新时间自动同步。\n\n"
+# 1. 生成根目录的总 README
+with open('README.md', 'w', encoding='utf-8') as f:
+    f.write("# 我的技术博客总入口\n\n")
+    f.write("## 学习分类\n")
+    f.write("- [🐍 Python 语言学习](./python/README.md)\n")
+    f.write("\n> 最近更新: 2025-12-24")
 
-    # 遍历当前目录下所有的文件
-    for filename in sorted(os.listdir('.')):
-        # 排除掉脚本自身和隐藏文件
-        if filename.endswith('.py') and filename != 'build_blog.py':
-            content += f"## 脚本：{filename}\n"
-            content += "```python\n"
-            
-            # 读取 .py 文件内容并写入 md
-            with open(filename, 'r', encoding='utf-8') as f:
-                content += f.read()
-            
-            content += "\n```\n\n---\n\n"
+# 2. 生成 python/ 目录的子 README
+if os.path.exists('python'):
+    with open('python/README.md', 'w', encoding='utf-8') as f:
+        f.write("# Python 学习笔记\n\n")
+        f.write("这里记录了 Python 的详细语法和案例。\n")
+        # 自动列出 python 目录下的文件
+        files = os.listdir('python')
+        for file in files:
+            if file.endswith('.py'):
+                f.write(f"- {file}\n")
 
-    # 将所有内容写入 README.md 或 index.md
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(content)
-    print("✅ 博客已自动更新到 README.md")
-
-if __name__ == "__main__":
-    generate_blog()
+print("✅ 博客已自动更新到 README.md 和 python/README.md")
