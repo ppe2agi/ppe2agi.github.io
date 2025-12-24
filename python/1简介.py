@@ -27,5 +27,3 @@
 ; 3、Python解释器
 ; 不同平台，不同cpu上，有不同的解释器，简单说来，就是让python最终控制0和1,不要纠结过程。
 
-
-print('hello world!')
