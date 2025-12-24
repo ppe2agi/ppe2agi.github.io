@@ -23,3 +23,10 @@ input()
 
 ---
 
+## 脚本：test.py
+```python
+print('test')
+```
+
+---
+
