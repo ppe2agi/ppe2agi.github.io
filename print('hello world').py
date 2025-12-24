@@ -5,3 +5,5 @@ if __name__ == "__main__":
     input("Press Enter to exit...")
 #测试
 print('github')
+print("github")
+a=12345
