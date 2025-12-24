@@ -20,10 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mkdocs-material
+          pip install mkdocs-material pymdownx-extensions
 
       - name: Run Script to Generate Docs
-        run: python build_blog.py  # 确保这里名字对得上
+        run: python build_blog.py
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
