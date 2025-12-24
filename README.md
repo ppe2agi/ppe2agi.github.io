@@ -1,12 +1,12 @@
-# 🏠 我的代码库
+# 🏠 我的代码仓库
 
-<sub>made by chanvel | 更新日期: 2025-12-24</sub>
+<sub>made by chanvel | 本地最后同步: 2025-12-24 21:20</sub>
 
-## 🐍 Python 案例源码
+## 🐍 Python 源码集锦
 
 ---
 
-### 📄 hello_world.py
+### 📄 文件: hello_world.py
 
 ```python
 #!/usr/bin/python3
@@ -28,7 +28,7 @@ input()
 
 ---
 
-### 📄 test.py
+### 📄 文件: test.py
 
 ```python
 print('test')
