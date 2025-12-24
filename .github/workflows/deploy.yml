@@ -23,7 +23,7 @@ jobs:
           pip install mkdocs-material
 
       - name: Run Script to Generate Docs
-        run: python buld_blog.py  # 确保这里名字对得上
+        run: python build_blog.py  # 确保这里名字对得上
 
       - name: Deploy
         run: mkdocs gh-deploy --force
