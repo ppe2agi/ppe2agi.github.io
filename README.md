@@ -26,6 +26,7 @@ input()
 ## 脚本：test.py
 ```python
 print('test')
+#测试自动化
 ```
 
 ---
