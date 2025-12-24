@@ -9,7 +9,7 @@ author_info = "made by chanvel"
 with open('README.md', 'w', encoding='utf-8') as f:
     # 标题下换行，并使用 <font color="#888"> 设置为浅灰色
     f.write(f"<sub><font color='#888'>{author_info} | 最近更新: {current_date}</font></sub>\n\n")
-    f.write("- [🐍 Python 语言学习](./python/README.md)\n")
+    f.write("- [🤔 Python 语言](./python/README.md)\n")
 
 # 2. 生成子目录的内容
 if not os.path.exists('python'):
@@ -17,7 +17,7 @@ if not os.path.exists('python'):
 
 with open('python/README.md', 'w', encoding='utf-8') as f:
     # 子目录也保持同样的低调灰色风格
-    f.write(f"# 🐍 Python 学习笔记\n")
+    f.write(f"# 🤔 Python 语言\n")
     f.write(f"<sub><font color='#888'>{author_info}</font></sub>\n\n")
     f.write("这里记录了从 .py 文件中自动提取的源码和案例。\n\n---\n\n")
     
