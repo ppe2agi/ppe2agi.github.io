@@ -1,44 +1,46 @@
 import os
+import shutil
 from datetime import datetime
 
-# === 1. 配置信息 ===
+# === 配置 ===
 current_date = datetime.now().strftime('%Y-%m-%d')
 author_info = "made by chanvel"
 domain_name = "blog.ppe2agi.qzz.io"
 
-# 确保 docs 目录存在
-if not os.path.exists('docs'):
-    os.makedirs('docs')
-if not os.path.exists('docs/python'):
-    os.makedirs('docs/python')
+# === 1. 清理并初始化 docs 目录 ===
+if os.path.exists('docs'):
+    shutil.rmtree('docs') # 彻底删除旧的，防止目录混乱
+os.makedirs('docs/python')
 
-# === 2. 在 docs 目录生成 CNAME (MkDocs 会将其构建到站点根目录) ===
+# === 2. 生成 CNAME ===
 with open('docs/CNAME', 'w', encoding='utf-8') as f:
     f.write(domain_name)
 
-# === 3. 生成主页 (index.md 对应你原来的 README) ===
+# === 3. 生成首页 index.md ===
 with open('docs/index.md', 'w', encoding='utf-8') as f:
+    f.write(f"# 欢迎来到我的代码库\n\n")
     f.write(f"<sub><font color='#888'>{author_info} | 最近更新: {current_date}</font></sub>\n\n")
+    f.write("### 内容分类\n")
     f.write("- [🤔 Python 语言](./python/index.md)\n")
 
-# === 4. 生成子目录的内容 ===
-# 注意：MkDocs 中子目录的默认页应命名为 index.md
-with open('docs/python/index.md', 'w', encoding='utf-8') as f:
+# === 4. 处理 python 文件夹下的源码 ===
+source_dir = 'python' # 指向根目录下的 python 文件夹
+dest_file = 'docs/python/index.md'
+
+with open(dest_file, 'w', encoding='utf-8') as f:
     f.write(f"# 🤔 Python 语言\n")
     f.write(f"<sub><font color='#888'>{author_info}</font></sub>\n\n")
-    f.write("这里记录了从 .py 文件中自动提取的源码和案例。\n\n---\n\n")
     
-    # 注意：源码文件依然在项目根目录的 python/ 文件夹下
-    source_dir = 'python' 
     if os.path.exists(source_dir):
-        files = [file for file in os.listdir(source_dir) if file.endswith('.py')]
-        if not files:
-            f.write("目前该分类下暂无代码文件。\n")
+        # 过滤出 .py 文件
+        py_files = [file for file in os.listdir(source_dir) if file.endswith('.py')]
+        
+        if not py_files:
+            f.write("目前暂无代码文件。\n")
         else:
-            for file in files:
-                file_path = os.path.join(source_dir, file)
+            for file in py_files:
                 f.write(f"### 📄 文件名: {file}\n\n")
-                with open(file_path, 'r', encoding='utf-8') as py_content:
+                with open(os.path.join(source_dir, file), 'r', encoding='utf-8') as py_content:
                     f.write("```python\n" + py_content.read() + "\n```\n\n---\n\n")
 
-print(f"✅ 执行完成：MkDocs 结构已生成。")
+print(f"✅ 目录已重构，docs 文件夹已准备就绪。")
