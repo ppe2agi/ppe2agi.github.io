@@ -13,9 +13,7 @@ def build():
 
     # 2. 生成根目录 README.md (总目录)
     with open('README.md', 'w', encoding='utf-8') as f:
-        f.write(f"# 🏠 我的自动化文档首页\n\n")
         f.write(f"<sub>{author_info} | 更新时间: {current_date}</sub>\n\n")
-        f.write("### 📂 内容分类\n")
         f.write("- [🤔 Python 语言源码库](./python/README.md) —— 点击查看所有代码案例\n")
 
     # 3. 生成 python/README.md (源码详情页)
