@@ -1,11 +1,10 @@
-# 🤔 Python 语言
-<sub><font color='#888'>made by chanvel</font></sub>
+# 🤔 Python 源码详情
 
-这里记录了从 .py 文件中自动提取的源码和案例。
+[⬅️ 返回首页](../README.md)
 
 ---
 
-### 📄 文件名: hello_world.py
+### 📄 案例：hello_world.py
 
 ```python
 #!/usr/bin/python3
@@ -27,7 +26,7 @@ input()
 
 ---
 
-### 📄 文件名: test.py
+### 📄 案例：test.py
 
 ```python
 print('test')
