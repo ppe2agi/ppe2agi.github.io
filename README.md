@@ -1,8 +1,8 @@
 # 源代码
 
-- [📁 Python 源码详情](./python/README.md) (2 个案例文件)
+- [📁 Python 源代码](./python/README.md) (2 个案例文件)
 
 ---
 
-更新时间: 2025-12-25 11:41  
+更新时间: 2025-12-25 11:43  
 made by **chanvel**
