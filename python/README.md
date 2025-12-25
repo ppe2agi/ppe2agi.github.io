@@ -1,6 +1,6 @@
 [源代码汇总](../README.md)
 
-### 1、简介
+### 一、简介
 1、哲学：
 言出法随：语言——编译——电流物理规律——物理变化。
 自然语言：中英等，
@@ -26,12 +26,12 @@ python目前用3.0以上版本，本blog不介绍2.0了。
 3、Python解释器
 不同平台，不同cpu上，有不同的解释器，简单说来，就是让python最终控制0和1,不要纠结过程。
 
-### 2、hello_world
+### 二、hello world!
 
 ```python
-print('hello_world')
+print('hello world!')
 ```
 
 
 
-made by chanvel & 2025-12-25 14:21
+made by chanvel & 2025-12-25 14:23

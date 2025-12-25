@@ -52,7 +52,7 @@ def build():
     SRC_MD.write_text("\n".join(sub_body + footer), encoding='utf-8')
 
     # 2. 主页 (README.md)
-    root_body = [f"- [Python源代码](./python/README.md)"]
+    root_body = [f"[Python源代码](./python/README.md)"]
     ROOT_MD.write_text("\n".join(root_body + footer), encoding='utf-8')
 
 if __name__ == "__main__":
