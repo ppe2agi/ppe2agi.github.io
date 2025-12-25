@@ -42,7 +42,7 @@ def build():
     py_files = sorted(SRC.glob('*.py'), key=get_sort_key)
     
     # 修改页脚样式
-    footer = [f"\n\nmade by chanvel  |  {NOW}"]
+    footer = [f"\n---\nmade by chanvel  |  {NOW}"]
     
     # 1. 详情页 (python/README.md)
     # p.stem 会保留所有原始字符，包括英文空格
