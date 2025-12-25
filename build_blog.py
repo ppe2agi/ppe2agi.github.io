@@ -44,7 +44,7 @@ def build():
     # 尾部内容：使用 extend 而不是重新赋值
     footer = [
         f"\n> 更新时间: {NOW}  ",
-        "made by **chanvel**"
+        "made by chanvel"
     ]
     markdown_segments.extend(footer)
 
@@ -57,7 +57,7 @@ def build():
         f"- [📁 Python 源码详情](./python/README.md) ({len(py_files)} 个案例文件)\n",
         "---",
         f"最后同步日期: `{NOW}`  ",
-        "made by **chanvel**"
+        "made by chanvel"
     ]
     ROOT_MD.write_text('\n'.join(root_content), encoding='utf-8')
 
