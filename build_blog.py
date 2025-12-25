@@ -65,13 +65,13 @@ def build():
     
     # 定义通用的页脚 (修正了 \n 换行符)
     common_footer = [
+        f"---\n",
         f"更新时间: {NOW}  ",
         "made by **chanvel**"
     ]
     
     # --- 1. 生成 python/README.md (源码详情页) ---
     markdown_segments = [
-        f"---\n",
         f"# 🤔 Python 源码汇总\n",
         f"[⬅️ 返回首页](../README.md)\n",
     ]
