@@ -1,10 +1,12 @@
 # 🐍 Python 源码汇总
 
+> 更新时间: 2025-12-25 10:21  
 [⬅️ 返回首页](../README.md)
 
 ---
 
 ## 📄 1简介.py
+<div style="white-space: pre-wrap; word-wrap: break-word;">
 
 ```python
 # 1、哲学：
@@ -38,6 +40,6 @@
 
 
 ```
+</div>
 
 ---
-
