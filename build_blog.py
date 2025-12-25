@@ -20,14 +20,21 @@ def process_py(p):
     content, code_acc = [], []
     def flush():
         if code_acc and any(l.strip() for l in code_acc):
-            content.extend(["\n```python", *code_acc, "```\n"])
+            # 修正：在代码块前后强制添加空行
+            content.append("") 
+            content.append("```python")
+            content.extend(code_acc)
+            content.append("```")
+            content.append("")
         code_acc.clear()
 
     for line in p.read_text(encoding='utf-8', errors='replace').splitlines():
         m = re.match(r'^\s*#\s?(.*)', line)
         if m:
             flush()
-            content.append(m.group(1) or "\n")
+            # 修正：确保注释行也是独立的段落
+            content.append(m.group(1).strip())
+            content.append("") 
         elif not line.strip():
             flush()
             content.append("")
@@ -57,4 +64,4 @@ def build():
 
 if __name__ == "__main__":
     build()
-    print(f"✨ 构建成功！英文空格已保留，页脚样式已更新。")
+    print(f"✨ 构建成功！已调整换行逻辑，防止内容合并。")
