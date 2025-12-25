@@ -4,93 +4,55 @@
 
 ### 📄 1简介.py
 
-1、哲学：  
-言出法随：语言——编译——电流物理规律——物理变化。  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
-
-```python
-
-```
-</div>
-
-自然语言：中英等  
-高级语言：Python、Java  
-中级语言：C语言  
-低级语言：机器码  
-机器：高低电压，电磁感应等  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
-
-```python
-
-```
-</div>
-
-随着AI的加持，自然语言的编译准确率大为提升，这是学编程最好的时代，也是最坏的时代  
-但是，外行只看到言出法随的方法论，却难以明晓计算思维的方法论  
-我们的目的是，在言出法随和计算思维的共同塑造之下，体会知行合一的本体论  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
+1、哲学：
+言出法随：语言——编译——电流物理规律——物理变化。
+自然语言：中英等
+高级语言：Python、Java
+中级语言：C语言
+低级语言：机器码
+机器：高低电压，电磁感应等
+随着AI的加持，自然语言的编译准确率大为提升，这是学编程最好的时代，也是最坏的时代。
+但是，外行只看到言出法随的方法论，却难以明晓计算思维的方法论。
+我们的目的是，在言出法随和计算思维的共同塑造之下，体会知行合一的本体论。
 
 ```python
 
 
 ```
-</div>
 
-2、最初的开始：  
-从python入手，主要原因是，AI时代里，可谓一枝独秀。本身作为胶水语言，站在无数语言的肩膀上，能够快速表达人的意图，损失点机器效率也无伤大雅。  
-以后再介绍笔者心目中的大佬，linux和git的创始人  
-我们先从python的大佬开始,先拜个码头：荷兰人，“龟叔”GuidovanRossum  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
-
-```python
-
-```
-</div>
-
-python目前用3.0以上版本，本blog不介绍2.0  
-至于windows,还是mac,或是linux发行版，以后玩转操作系统了，我们再深扒这些，网上的安装教程太多，笔者十几年的windows用户，后来虽然支持开源，但习惯性使用ubuntu  
-个人觉着debian是真稳定，但没法子，用的nvidia显卡，而nvidia和linux大佬的恩怨，导致专用驱动在ubuntu上表现较好，咱也不纠结这个了，至于arch、redhat等发行版，咱也不多说，希望linux多点适配软件，少点发行版吧  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
-
-```python
-
-```
-</div>
-
-言归正传，python在不同系统上都有强大的库支持，随意安装  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
+2、最初的开始：
+从python入手，主要原因是，AI时代里，可谓一枝独秀。本身作为胶水语言，站在无数语言的肩膀上，能够快速表达人的意图，损失点机器效率也无伤大雅。
+以后再介绍笔者心目中的大佬，linux和git的创始人。
+我们先从python的大佬开始,先拜个码头：荷兰人，GuidovanRossum“龟叔”。
+python目前用3.0以上版本，本blog不介绍2.0了。
+至于windows,还是mac,或是linux发行版，以后玩转操作系统了，我们再深扒这些，网上的安装教程太多，笔者十几年的windows用户，后来虽然支持开源，但习惯性使用ubuntu。
+个人觉着debian是真稳定，但没法子，用的nvidia显卡，而nvidia和linux大佬的恩怨，导致专用驱动在ubuntu上表现较好，咱也不纠结这个了，至于arch、redhat等发行版，咱也不多说，希望linux多点适配软件，少点发行版吧。
+言归正传，python在不同系统上都有强大的库支持，随意安装。
 
 ```python
 
 
 ```
-</div>
 
-3、Python解释器  
-不同平台，不同cpu上，有不同的解释器，简单说来，就是让python最终控制0和1,不要纠结过程  
-<div style="white-space: pre-wrap; word-wrap: break-word;">
+3、Python解释器
+不同平台，不同cpu上，有不同的解释器，简单说来，就是让python最终控制0和1,不要纠结过程。
 
 ```python
 
 ```
-</div>
 
 
 ---
 
 ### 📄 2hello_world.py
 
-<div style="white-space: pre-wrap; word-wrap: break-word;">
 
 ```python
 print('hello_world')
 ```
-</div>
 
 
 ---
 
-
----
-更新时间: 2025-12-25 11:11  
+更新时间: 2025-12-25 11:19  
 made by **chanvel**
