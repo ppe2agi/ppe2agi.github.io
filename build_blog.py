@@ -47,7 +47,7 @@ def build():
     
     # 统一页脚 (去掉 > 避免竖线)
     common_footer = [
-        f"---/n"
+        f"---\n",
         f"更新时间: {NOW}  ",
         "made by **chanvel**"
     ]
