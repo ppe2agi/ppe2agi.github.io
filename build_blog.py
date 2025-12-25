@@ -46,10 +46,10 @@ def build():
 
     # 2. 生成根目录 README.md (项目入口)
     root_content = [
-        f"最后同步日期: `{NOW}`\n",
         f"- [📁 Python 源码详情](./python/README.md) ({len(py_files)} 个案例文件)\n",
         "---",
-        "Tip: 在 VS Code 中预览此文档可按 `Ctrl+Shift+V`。"
+        f"最后同步日期: `{NOW}`\n",
+        "made by chanvel"
     ]
     ROOT_MD.write_text('\n'.join(root_content), encoding='utf-8')
 
