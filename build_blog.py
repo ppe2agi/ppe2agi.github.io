@@ -10,7 +10,6 @@ ROOT_MD = Path('README.md')
 SRC_MD = SRC / 'README.md'
 
 def process_py_content(file_path):
-    """提取 Python 内容并转为 MD"""
     lines = file_path.read_text(encoding='utf-8', errors='replace').splitlines()
     processed_parts = []
     current_code_block = []
@@ -52,34 +51,32 @@ def build():
         "made by **chanvel**"
     ]
     
-    # --- 1. 生成 python/README.md (详情页) ---
-    # 全部改为二级标题，避免被 Cayman 抓取到顶部
-    markdown_segments = [
-        f"## 🤔 Python 源代码详情\n",
+    # --- 1. 生成子目录详情页 ---
+    # 删掉一级标题，详情页正文从二级标题开始
+    sub_md = [
+        f"## 📄 Python 源代码详情\n", # 改为二级
         f"[⬅️ 返回首页](../README.md)\n",
     ]
 
     for py in py_files:
         try:
-            # 文件名使用三级标题，层次分明
-            markdown_segments.append(f"### 📄 {py.name}\n")
-            markdown_segments.append(process_py_content(py))
-            print(f"✅ 已同步: {py.name}")
+            sub_md.append(f"### 📄 {py.name}\n") # 文件名用三级
+            sub_md.append(process_py_content(py))
         except Exception as e:
             print(f"❌ 错误: {e}")
     
-    markdown_segments.extend(common_footer)
-    SRC_MD.write_text('\n'.join(markdown_segments), encoding='utf-8')
+    sub_md.extend(common_footer)
+    SRC_MD.write_text('\n'.join(sub_md), encoding='utf-8')
 
-    # --- 2. 生成根目录 README.md (首页) ---
-    # 将原来的 # 源代码 换成了 ## 源代码
-    root_content = [
-        f"## 源代码\n",
-        f"- [📁 Python 源代码案例](./python/README.md) ({len(py_files)} 个案例文件)\n",
+    # --- 2. 生成根目录首页 ---
+    # 核心修改：首页不再使用一级标题 #
+    root_md = [
+        f"## 📚 源代码目录\n", # 这里改用二级标题
+        f"- [📁 点击查看 Python 源代码案例](./python/README.md) ({len(py_files)} 个案例文件)\n",
     ] + common_footer
     
-    ROOT_MD.write_text('\n'.join(root_content), encoding='utf-8')
+    ROOT_MD.write_text('\n'.join(root_md), encoding='utf-8')
 
 if __name__ == "__main__":
     build()
-    print(f"\n✨ 构建完成！标题已降级为二级。")
+    print(f"\n✨ 构建完成！已适配固定 Title 配置。")
