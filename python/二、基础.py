@@ -51,13 +51,10 @@ print(complex(num))  # 输出: (5+0j)
 print("A\nB\t\\")  # 换行、制表、斜杠
 print(r"A\nB\t\\") # 原样输出
 # 2. 三引号（直接回车，不要打点）
+print("A\nB\t\\")  # 输出: A (换行) B (制表符) \
+print(r"A\nB\t\\") # 输出: A\nB\t\\ (原样输出)
 print('''第一行
-第二行''')
-# A
-# B	\
-# A\nB\t\\
-# 第一行
-# 第二行
+第二行''')          # 输出: 多行文本 (所见即所得)
 
 # 4.3 布尔类型 (Boolean)：只有两个值：True 或 False，常用于逻辑判断。
 # 1是true,0是false,逻辑正确是true,逻辑错误是false,1和0加上and、or、not与或非，可以推演出整个计算世界，Boolean籍籍无名了一辈子，死后他的思想却光芒万丈。
