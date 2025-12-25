@@ -47,6 +47,7 @@ def build():
     
     # 统一页脚 (去掉 > 避免竖线)
     common_footer = [
+        f"---/n"
         f"更新时间: {NOW}  ",
         "made by **chanvel**"
     ]
@@ -59,7 +60,6 @@ def build():
             markdown_segments.append(f"### 📄 {py.name}")
             # 核心：确保标题和内容之间有空行
             markdown_segments.append("\n" + process_py_content(py))
-            markdown_segments.append("\n---\n")
         except Exception as e:
             print(f"❌ 读取 {py.name} 失败: {e}")
     
