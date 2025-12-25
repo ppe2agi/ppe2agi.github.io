@@ -10,7 +10,7 @@ ROOT_MD = Path('README.md')
 SRC_MD = SRC / 'README.md'
 
 def process_py_content(file_path):
-    """提取 Python 文件内容并转换为 Markdown"""
+    """提取 Python 内容并转为 MD"""
     lines = file_path.read_text(encoding='utf-8', errors='replace').splitlines()
     processed_parts = []
     current_code_block = []
@@ -45,43 +45,41 @@ def build():
 
     py_files = sorted(SRC.glob('*.py'))
     
-    # 定义通用的页脚
+    # 通用页脚
     common_footer = [
-        "\n<br>\n",
-        "---",
-        f"**更新时间:** {NOW}  ",
+        "\n---",
+        f"更新时间: {NOW}  ",
         "made by **chanvel**"
     ]
     
-    # --- 1. 生成 python/README.md ---
-    # 第一个一级标题会被 Cayman 抓取到顶部背景中
-    sub_md = [
-        "# Python 源代码详情\n", 
+    # --- 1. 生成 python/README.md (详情页) ---
+    # 全部改为二级标题，避免被 Cayman 抓取到顶部
+    markdown_segments = [
+        f"## 🤔 Python 源代码详情\n",
         f"[⬅️ 返回首页](../README.md)\n",
     ]
 
     for py in py_files:
         try:
-            # 文件名使用二级标题 (##)，它会留在白色正文区
-            sub_md.append(f"## 📄 {py.name}\n")
-            sub_md.append(process_py_content(py))
+            # 文件名使用三级标题，层次分明
+            markdown_segments.append(f"### 📄 {py.name}\n")
+            markdown_segments.append(process_py_content(py))
             print(f"✅ 已同步: {py.name}")
         except Exception as e:
             print(f"❌ 错误: {e}")
     
-    sub_md.extend(common_footer)
-    SRC_MD.write_text('\n'.join(sub_md), encoding='utf-8')
+    markdown_segments.extend(common_footer)
+    SRC_MD.write_text('\n'.join(markdown_segments), encoding='utf-8')
 
-    # --- 2. 生成根目录 README.md ---
-    # 第一个一级标题会被 Cayman 抓取到顶部背景中
-    root_md = [
-        "# 源代码主页\n",
-        "### 📂 项目目录",
-        f"- [📁 点击进入 Python 源代码仓库](./python/README.md) ({len(py_files)} 个案例文件)",
+    # --- 2. 生成根目录 README.md (首页) ---
+    # 将原来的 # 源代码 换成了 ## 源代码
+    root_content = [
+        f"## 源代码\n",
+        f"- [📁 Python 源代码案例](./python/README.md) ({len(py_files)} 个案例文件)\n",
     ] + common_footer
     
-    ROOT_MD.write_text('\n'.join(root_md), encoding='utf-8')
+    ROOT_MD.write_text('\n'.join(root_content), encoding='utf-8')
 
 if __name__ == "__main__":
     build()
-    print("\n✨ 构建完成！请推送到 GitHub 并在 Settings 中确保主题为 Cayman。")
+    print(f"\n✨ 构建完成！标题已降级为二级。")
