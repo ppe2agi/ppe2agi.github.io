@@ -1,12 +1,11 @@
 ---
 layout: default
-title: Python 源代码详情
+title: Python 源码详情
 ---
 
 [⬅️ 返回首页](../README.md)
 
 ### 📄 1简介.py
-
 1、哲学：
 言出法随：语言——编译——电流物理规律——物理变化。
 自然语言：中英等，
@@ -34,12 +33,11 @@ python目前用3.0以上版本，本blog不介绍2.0了。
 
 ### 📄 2hello_world.py
 
-
 ```python
 print('hello_world')
 ```
 
 
 ---
-更新时间: 2025-12-25 12:33  
+更新时间: 2025-12-25 12:36  
 made by **chanvel**

@@ -10,6 +10,7 @@ ROOT_MD = Path('README.md')
 SRC_MD = SRC / 'README.md'
 
 def process_py_content(file_path):
+    """提取 Python 文件内容并转换为 MD"""
     lines = file_path.read_text(encoding='utf-8', errors='replace').splitlines()
     processed_parts = []
     current_code_block = []
@@ -38,55 +39,39 @@ def process_py_content(file_path):
     return "\n".join(processed_parts)
 
 def build():
+    # 确保目录存在
     if not SRC.exists():
         SRC.mkdir(exist_ok=True)
         return
 
     py_files = sorted(SRC.glob('*.py'))
     
-    common_footer = [
-        "\n---",
-        f"更新时间: {NOW}  ",
-        "made by **chanvel**"
-    ]
+    # 定义通用的页脚
+    common_footer = "\n---\n更新时间: " + NOW + "  \nmade by **chanvel**"
     
-    # --- 1. 生成子目录 README.md ---
-    # 修正点：确保 --- 独立成行，且冒号后必须有空格
-    markdown_segments = [
-        "---",
-        "layout: default",
-        "title: Python 源代码详情",
-        "---",
-        "",
-        f"[⬅️ 返回首页](../README.md)",
-        ""
-    ]
+    # --- 1. 生成子目录 python/README.md ---
+    # 使用字符串直接拼接确保格式最稳固
+    sub_md_header = "---\nlayout: default\ntitle: Python 源码详情\n---\n\n"
+    sub_md_body = "[⬅️ 返回首页](../README.md)\n\n"
 
     for py in py_files:
         try:
-            markdown_segments.append(f"### 📄 {py.name}\n")
-            markdown_segments.append(process_py_content(py))
+            sub_md_body += "### 📄 " + py.name + "\n"
+            sub_md_body += process_py_content(py) + "\n"
+            print("✅ 已处理: " + py.name)
         except Exception as e:
-            print(f"❌ 错误: {e}")
+            print("❌ 错误: " + str(e))
     
-    markdown_segments.extend(common_footer)
-    SRC_MD.write_text('\n'.join(markdown_segments), encoding='utf-8')
+    SRC_MD.write_text(sub_md_header + sub_md_body + common_footer, encoding='utf-8')
 
     # --- 2. 生成根目录 README.md ---
-    # 修正点：Front Matter 与正文标题之间必须留有空行
-    root_content = [
-        "---",
-        "layout: default",
-        "title: 源代码主页",
-        "---",
-        "", # 必须的空行
-        "### 📚 项目案例",
-        f"- [📁 点击查看 Python 源代码](./python/README.md) (共 {len(py_files)} 个案例)",
-        ""
-    ] + common_footer
+    # 严格遵循 YAML Front Matter 规范
+    root_md_header = "---\nlayout: default\ntitle: 源代码主页\n---\n\n"
+    root_md_body = "### 📚 项目案例\n"
+    root_md_body += "- [📁 点击查看 Python 源代码](./python/README.md) (共 " + str(len(py_files)) + " 个案例)\n"
     
-    ROOT_MD.write_text('\n'.join(root_content), encoding='utf-8')
+    ROOT_MD.write_text(root_md_header + root_md_body + common_footer, encoding='utf-8')
 
 if __name__ == "__main__":
     build()
-    print(f"\n✨ 构建完成！")
+    print("\n✨ 构建成功！请提交代码并在 GitHub 仓库的 'Actions' 页面观察构建进度。")
