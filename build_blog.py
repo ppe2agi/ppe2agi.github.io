@@ -53,7 +53,6 @@ def build():
 
     # --- 2. 生成根目录 README.md (项目入口) ---
     root_content = [
-        "# 🚀 代码库",
         f"- [📁 Python 源码详情](./python/README.md) ({len(py_files)} 个案例文件)\n",
         "---",
         f"最后同步日期: `{NOW}`  ",
