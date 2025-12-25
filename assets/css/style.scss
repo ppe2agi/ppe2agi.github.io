@@ -2,30 +2,27 @@
 ---
 @import "{{ site.theme }}";
 
-// 1. 核心修复：强制所有页面显示滚动条占位符，消除页面抖动/偏移
+// 1. 消除滚动条带来的抖动
 html {
   overflow-y: scroll;
 }
 
-// 2. 增强 Header 居中稳定性
+// 2. 统一标题区样式：取消所有默认偏移，强制居中
 .page-header {
-  padding: 1.5rem 2rem !important;
+  padding: 1.5rem 0 !important; // 上下留白，左右不设 padding 以防干扰居中
   text-align: center !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  // 消除潜在的宽度溢出
-  box-sizing: border-box; 
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  display: block !important; // 改回块级布局，减少 flex 干扰
 }
 
-// 3. 强制标题和描述绝对居中
 .project-name, .project-tagline {
-  width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
-  max-width: none !important; // 移除 Cayman 可能存在的最大宽度限制
+  display: block !important;
+  width: 100% !important;
 }
 
 .project-name {
@@ -38,7 +35,20 @@ html {
   opacity: 0.8;
 }
 
-// 4. 正文细线样式
+// 3. 核心对齐：强制正文区与标题区的中线对齐
+.main-content {
+  max-width: 64rem;      // Cayman 默认宽度
+  margin: 0 auto !important; // 绝对居中
+  padding: 2rem 1rem !important;
+  word-wrap: break-word;
+}
+
+// 4. 移除正文内可能存在的额外左偏距
+#content {
+  text-align: left; // 正文内容左对齐，但容器本身在页面居中
+}
+
+// 5. 细线样式
 hr {
   height: 1px !important;
   border: none !important;
