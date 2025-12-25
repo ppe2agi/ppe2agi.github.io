@@ -232,7 +232,97 @@ print(not 1)    # 输出: False (逻辑非)
 
 4.4 序列类型 (Sequence)：包括可变的列表 list（如 [1, 2]）和不可变的元组 tuple（如 (1, 2)）。
 
-后面专题
+list列表，有序队列，可以索引，也就是找到对应人，一般排队到队尾，也可插队，还有删除、弹出、排序等操作
+
+示例A
+
+
+```python
+none = list()
+print(none)    #输出是[]
+```
+
+示例B
+
+--- 1. 创建与显示 ---
+
+
+```python
+abc = list("abc")
+print(abc)    #输出是['a', 'b', 'c']
+```
+
+--- 2. 末尾添加 ---
+
+
+```python
+abc.append('d')
+print(abc)    #输出是['a', 'b', 'c', 'd']
+```
+
+--- 3. 指定位置插入 ---
+
+
+```python
+abc.insert(1, 'x')
+print(abc)    #输出是['a', 'x', 'b', 'c', 'd']
+```
+
+--- 4. 修改元素 ---
+
+
+```python
+abc[0] = 'A'
+print(abc)    #输出是['A', 'x', 'b', 'c', 'd']
+```
+
+--- 5. 删除指定值 ---
+
+
+```python
+abc.remove('x')
+print(abc)    #输出是['A', 'b', 'c', 'd']
+```
+
+--- 6. 弹出指定位置元素 ---
+
+
+```python
+item = abc.pop(2)
+print(abc)    #输出是['A', 'b', 'd']
+print(item)   #输出是c
+```
+
+--- 7. 查看长度 ---
+
+
+```python
+print(len(abc)) #输出是3
+```
+
+--- 8. 列表切片 ---
+
+
+```python
+sub = abc[0:2]
+print(sub)    #输出是['A', 'b']
+```
+
+--- 9. 反转列表 ---
+
+
+```python
+abc.reverse()
+print(abc)    #输出是['d', 'b', 'A']
+```
+
+--- 10. 清空列表 ---
+
+
+```python
+abc.clear()
+print(abc)    #输出是[]
+```
 
 
 4.5 映射与集合 (Mapping & Set)：包括存储键值对的字典 dict（如 {"key": "value"}）和无序不重复的集合 set
@@ -393,9 +483,10 @@ print(data_emoji)  # 输出: b'\xf0\x9f\x90\x8d'
 ```
 
 
+7、条件判断
 
 
 
 
 ---
-made by chanvel   |   2025-12-25 18:53
+made by chanvel   |   2025-12-25 19:13
