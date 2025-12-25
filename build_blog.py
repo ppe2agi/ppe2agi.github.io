@@ -10,7 +10,7 @@ ROOT_MD = Path('README.md')
 SRC_MD = SRC / 'README.md'
 
 def process_py_content(file_path):
-    """提取 Python 内容并转换为 Markdown，代码与注释分离"""
+    """提取 Python 内容并转换为 Markdown，确保注释与代码块层级正确"""
     lines = file_path.read_text(encoding='utf-8', errors='replace').splitlines()
     processed_parts = []
     current_code_block = []
@@ -46,40 +46,21 @@ def build():
 
     py_files = sorted(SRC.glob('*.py'))
     
-    # 通用页脚
+    # 通用页脚：使用 --- 触发 CSS 中定义的细线样式
     common_footer = [
         "\n---",
         f"更新时间: {NOW}  ",
         "made by **chanvel**"
     ]
     
-    # --- 1. 生成子目录 python/README.md ---
-    # 删除了所有标题行，正文直接从返回链接开始
+    # --- 1. 生成子目录 python/README.md (详情页) ---
+    # 核心修复：显式包含 YAML Front Matter 确保子目录应用自定义布局
     sub_md = [
+        "---",
+        "layout: default",
+        "---",
+        "",
         f"[⬅️ 源代码汇总](../README.md)\n",
     ]
 
-    for py in py_files:
-        try:
-            # 文件名仍保留三级标题作为分隔，如果你也不想要，可以改成加粗文本
-            sub_md.append(f"### 📄 {py.name}\n") 
-            sub_md.append(process_py_content(py))
-            print(f"✅ 已同步: {py.name}")
-        except Exception as e:
-            print(f"❌ 错误: {e}")
-    
-    sub_md.extend(common_footer)
-    SRC_MD.write_text('\n'.join(sub_md), encoding='utf-8')
-
-    # --- 2. 生成根目录 README.md ---
-    # 核心修改：首页完全不写任何标题 (# 或 ##)
-    root_md = [
-        # 这里直接开始写内容
-        f"- [📁 Python 源代码](./python/README.md) ({len(py_files)} 个案例)\n",
-    ] + common_footer
-    
-    ROOT_MD.write_text('\n'.join(root_md), encoding='utf-8')
-
-if __name__ == "__main__":
-    build()
-    print(f"\n✨ 构建完成！正文标题已全部移除。")
+    for py in py_
