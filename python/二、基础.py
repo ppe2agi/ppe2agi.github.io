@@ -85,7 +85,7 @@ print(1 or 0)   # 输出: 1 (逻辑或：一真则真)
 print(not 1)    # 输出: False (逻辑非)
 
 # 4.4 序列类型 (Sequence)：包括可变的列表 list（如 [1, 2]）和不可变的元组 tuple（如 (1, 2)）。
-# list列表，有序队列，可以索引，也就是找到对应人，一般排队到队尾，也可插队，还有删除、弹出、排序等操作
+# 4.4.1 list列表，有序队列，可以索引，也就是找到对应人，一般排队到队尾，也可插队，还有删除、弹出、排序等操作
 # 示例A
 none = list()
 print(none)    #输出是[]
@@ -121,8 +121,54 @@ print(abc)    #输出是['d', 'b', 'A']
 abc.clear()
 print(abc)    #输出是[]
 
-# 4.5 映射与集合 (Mapping & Set)：包括存储键值对的字典 dict（如 {"key": "value"}）和无序不重复的集合 set
-# 后面专题
+# 4.4.2 tuple元组，list是可以随意修改的阵列，而元组是一旦创建就不能修改的只读阵列。
+t=()    # 0个
+t=(1,)  # 1个，主要区别数学运算，要加,
+t=(1,2) # 2个
+
+# 4.5 映射与集合 (Mapping & Set)：包括存储键值对的字典 dict（如 {"key": "value"}）和无序不重复的集合 set。dict是找东西，set是比关系。
+# 4.5.1 在python中的dict,在其他语言中是map,核心逻辑是KV，也就是key-value键值存储。
+# 之所以用dict,源于list的查找虽然有序，但要遍历，耗时就长了。笔者在cloudflare中部署项目的时候，遇到了KV,当时不明所以。其实这就是算法里面的哈希算法。
+# 示例
+# 方法一，定义字典 d
+d = {'a': 1, 'b': 2, 'c': 3}
+# 查看字典
+print(d)  # 输出: {'a': 1, 'b': 2, 'c': 3}
+# 方法二，dict()函数
+d = dict(a=1, b=2, c=3)
+# dict本质是用空间换时间，dict的key必须是不可变对象，tuple元组可以转换成dict字典。
+
+# 4.5.2 set集合，就是只有key没有value的dict。底层实现上都是hash table哈希表实现功能。
+# 示例
+# 绝活：去重
+old = [1, 2, 2, 3, 3, 3]
+new = list(set(old)) 
+print(new) # 输出: [1, 2, 3]
+# 绝活：集合运算
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a & b) # 交集: {3} (共有元素)
+print(a | b) # 并集: {1, 2, 3, 4, 5} (合在一块)
+print(a - b) # 差集: {1, 2} (a有b没有)
+
+# 4.5.3 []list,()tuple,{}dict/set
+# 示例
+# 1. [] 列表 (List) - 最常用，可随便改
+my_list = [1, 2, 2, 3]
+my_list[0] = 100        # 可以修改
+my_list.append(4)       # 可以增加
+print(f"List: {my_list}")
+# 2. () 元组 (Tuple) - 定义了就不能动
+my_tuple = (1, 2, 2, 3)
+# my_tuple[0] = 100     # 报错！不可修改
+print(f"Tuple: {my_tuple}")
+# 3. {} 字典 (Dict) - 键值对，查得快
+my_dict = {'a': 1, 'b': 2}
+my_dict['c'] = 3        # 增加或修改
+print(f"Dict: {my_dict}")
+# 4. {} 集合 (Set) - 只要不重复的元素
+my_set = {1, 2, 2, 3}   # 自动去掉一个2
+print(f"Set: {my_set}") # 输出: {1, 2, 3}
 
 # 5、量
 # 变量使用小写字母命名（如 score），用于记录经常改变的临时状态或计数器。
