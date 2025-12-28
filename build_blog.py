@@ -22,25 +22,21 @@ def process_py(p):
             content.append(f"\n```python\n" + "\n".join(code_acc).strip() + "\n```\n")
         code_acc.clear()
 
-    # 使用 <pre> 开启预格式化，确保所有空格和换行与源码一致
-    content.append('<pre style="font-family: inherit; background: transparent; border: none; padding: 0; white-space: pre-wrap;">')
-    
     for line in p.read_text(encoding='utf-8').splitlines():
+        # 匹配 # 及其后所有内容，保留注释内部的所有原始空格
         m = re.match(r'^\s*#\s?(.*)', line)
         if m:
             flush()
-            # 直接提取 # 后面的原始文本，不做任何 strip 或重排
+            # 获取 # 后的原始文本，不做 lstrip，直接保留源码缩进
             text = m.group(1)
-            content.append(f"{text}")
-        
+            # 使用 <br> 强制换行，文字将按源码中的空格原样呈现
+            content.append(f"{text}<br>")
         elif not line.strip():
-            flush()
-            content.append("") # 保持空行
+            flush(); content.append("<br>")
         else:
             code_acc.append(line)
             
     flush()
-    content.append('</pre>')
     return "\n".join(content)
 
 def build():
