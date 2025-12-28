@@ -36,23 +36,23 @@ def process_py(p):
             text = m.group(1)
             stripped_text = text.lstrip()
             
-            # 1. 细线处理：前后加空行，彻底解决文字变粗变大的问题
+            # 1. 处理细线：确保前后空行，防止触发 Setext 标题加粗
             if re.match(r'^[=\-]{3,}$', stripped_text):
                 content.append("\n---\n")
             
-            # 2. 序号/标题行：完全顶格，不加任何空格
-            # 匹配 1. / 1、 / 一、 / 【 / 列表符号
+            # 2. 识别“不缩进”的标题/序号行
+            # 匹配：1. 或 1、 或 一、 或 【 或 列表符号
             elif re.match(r'^(\d+[\.、]|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped_text):
                 content.append(f"{stripped_text}<br>")
             
-            # 3. 正文文本：对齐补偿缩进
+            # 3. 正文文本：使用 3 个 &nbsp; 进行缩进对齐
             else:
                 if not text.strip():
                     content.append("<br>")
                 else:
-                    # 关键修改：使用 1个全角空格 + 1个标准空格 (&nbsp;)
-                    # 这样可以抵消 GitHub 列表渲染带来的 1 字符偏差，实现垂直对齐
-                    content.append(f"　&nbsp;{stripped_text}<br>") 
+                    # &nbsp; 是半角宽度。3个通常能抵消掉“1、”带来的视觉偏差
+                    # 如果还是差一点点，可以增减 &nbsp; 的数量
+                    content.append(f"&nbsp;&nbsp;&nbsp;{stripped_text}<br>") 
         
         elif not line.strip():
             flush()
