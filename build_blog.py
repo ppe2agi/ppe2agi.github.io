@@ -28,20 +28,24 @@ def process_py(p):
             flush()
             text = m.group(1)
             stripped = text.lstrip()
-            # 1. 分隔线处理：防加粗
+            
+            # 1. 分隔线：确保前后空行，防止文字变粗
             if re.match(r'^[=\-]{3,}$', stripped):
                 content.append("\n---\n")
-            # 2. 标题行：顶格 + 50% 宽度序号
+            
+            # 2. 标题行：顶格，序号后补全角空格
             elif re.match(r'^(\d+[\.、\s]|\d+(\.\d+)+|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped):
                 h = re.match(r'^(\d+[\.、]|\d+(\.\d+)+|[\u4e00-\u9fa5]+[、])', stripped)
                 if h:
                     pre, rest = h.group(1).rstrip(), stripped[h.end():].lstrip()
-                    content.append(f"<code>{pre}</code> {rest}<br>")
+                    # 序号后补一个全角空格 '　'，能让标题文字的起始点与缩进后的正文完美对齐
+                    content.append(f"{pre}　{rest}<br>")
                 else:
                     content.append(f"{stripped}<br>")
-            # 3. 正文行：精准 2 字符缩进
+            
+            # 3. 正文行：精准使用两个全角空格缩进
             else:
-                content.append(f"&emsp;&emsp;{stripped}<br>" if stripped else "<br>")
+                content.append(f"　　{stripped}<br>" if stripped else "<br>")
         elif not line.strip():
             flush(); content.append("<br>")
         else:
