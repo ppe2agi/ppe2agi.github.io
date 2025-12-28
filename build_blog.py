@@ -36,37 +36,47 @@ def to_full_width(text):
 
 import re
 
+import re
+
 def process_py(p):
     content, code_acc = [], []
     def flush():
         if code_acc and any(l.strip() for l in code_acc):
+            # 确保代码块前后有空行，保持结构清晰
             content.append(f"\n```python\n" + "\n".join(code_acc).strip() + "\n```\n")
         code_acc.clear()
 
     for line in p.read_text(encoding='utf-8').splitlines():
-        # 捕获注释行，忽略 # 前后的原始空格
+        # 匹配注释行
         m = re.match(r'^\s*#\s?(.*)', line)
         if m:
             flush()
             text = m.group(1)
             stripped = text.lstrip()
             
-            # 1. 分隔线：转为 MD 细线，前后加空行防止文字变粗
+            # 1. 细线处理：将 === 或 --- 转为 MD 分隔线，前后加空行防止文字变粗
             if re.match(r'^[=\-]{3,}$', stripped):
                 content.append("\n---\n")
             
-            # 2. 标题/序号行：匹配 1. / 1、 / 1.1 / 一、 / 【
-            # 这些行强制顶格，不加缩进
+            # 2. 标题/序号行逻辑：顶格显示 + 序号后补一个半角空格
+            # 匹配：1. 或 1、 或 1.1 或 一、 等
             elif re.match(r'^(\d+[\.、\s]|\d+(\.\d+)+|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped):
-                content.append(f"{stripped}<br>")
+                # 找到序号部分，并在其后强制补一个半角空格
+                # 例如将 "1.1程序" 变为 "1.1 程序"
+                header_match = re.match(r'^(\d+[\.、]|\d+(\.\d+)+|[\u4e00-\u9fa5]+[、])', stripped)
+                if header_match:
+                    prefix = header_match.group(1).rstrip() # 获取序号并去掉原有末尾空格
+                    rest = stripped[header_match.end():].lstrip() # 获取序号后的文字并去掉原有开头空格
+                    content.append(f"{prefix} {rest}<br>") # 拼接并强制加一个半角空格
+                else:
+                    content.append(f"{stripped}<br>")
             
-            # 3. 正文行：精准缩进 2 个中文字符位
+            # 3. 正文行：使用 &emsp; 实现精准的 2 字符（2个汉字宽度）缩进
             else:
                 if not text.strip():
                     content.append("<br>")
                 else:
-                    # &emsp; 是最稳固的 1:1 汉字宽度占位符
-                    # 这样正文会从第 3 个中文字符的位置开始对齐
+                    # &emsp; 宽度等于一个汉字，2个即为标准缩进
                     content.append(f"&emsp;&emsp;{stripped}<br>") 
         
         elif not line.strip():
