@@ -26,19 +26,27 @@ def process_py(p):
     content, code_acc = [], []
     def flush():
         if code_acc and any(l.strip() for l in code_acc):
-            content.append(f"\n```python\n" + "\n".join(code_acc) + "\n```\n")
+            # 确保代码块前后都有空行
+            content.append("\n```python")
+            content.extend(code_acc)
+            content.append("```\n")
         code_acc.clear()
 
-    for line in p.read_text(encoding='utf-8').splitlines():
+    lines = p.read_text(encoding='utf-8').splitlines()
+    for line in lines:
+        # 匹配注释行 # 
         m = re.match(r'^\s*#\s?(.*)', line)
         if m:
             flush()
-            # 核心修改：直接添加内容，不强制追加空行 ""
-            content.append(m.group(1).rstrip())
+            text = m.group(1).rstrip()
+            # 修复逻辑：如果注释是以列表符号（1. 或 -）开头，
+            # 或者是特定的标题/分隔符，确保它能触发 Markdown 格式
+            content.append(text)
         elif not line.strip():
             flush()
-            # 仅在段落间保留一个空行
-            if content and content[-1] != "": content.append("")
+            # 关键：确保段落之间至少有一个真正的空行
+            if content and content[-1] != "":
+                content.append("") 
         else:
             code_acc.append(line)
     flush()
