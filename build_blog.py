@@ -34,27 +34,25 @@ def process_py(p):
         if m:
             flush()
             text = m.group(1)
-            stripped_text = text.lstrip()
+            stripped = text.lstrip()
             
-            # 1. 分隔线处理：将 === 或 --- 转换为标准的 MD 细分割线
-            # 前后加空行，防止 GitHub 将上一行文字误判为大标题
-            if re.match(r'^[=\-]{3,}$', stripped_text):
+            # 1. 分隔线：前后加空行，防止加粗
+            if re.match(r'^[=\-]{3,}$', stripped):
                 content.append("\n---\n")
             
-            # 2. 识别不缩进的行（序号、小标题、列表）
-            # 匹配 1. / 1、 / 一、 / 【 / - / *
-            elif re.match(r'^(\d+[\.、]|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped_text):
-                # 序号行直接输出原文，确保顶格
-                content.append(f"{text}<br>")
+            # 2. 识别“不缩进”的行（序号、标题）
+            # 增加对 1.1 这种多级序号的匹配
+            elif re.match(r'^(\d+(\.\d+)*[\.、]|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped):
+                content.append(f"{stripped}<br>")
             
-            # 3. 正文文本：精准缩进 2 个中文字符
+            # 3. 正文文本：使用 HTML 样式实现物理意义上的 2 字符缩进
             else:
                 if not text.strip():
                     content.append("<br>")
                 else:
-                    # &emsp; 的宽度等于一个汉字，2个即为标准 2 字符缩进
-                    # 使用 stripped_text 确保不会因为源码中的额外空格产生二次偏差
-                    content.append(f"&emsp;&emsp;{stripped_text}<br>") 
+                    # 使用 2em 确保在任何字体下都是精准的两个汉字宽度
+                    # p 标签会自动处理换行，无需再加 <br>
+                    content.append(f'<p style="text-indent: 2em; margin: 0;">{stripped}</p>') 
         
         elif not line.strip():
             flush()

@@ -2,35 +2,35 @@
 
 ### 序
 1、言出法随<br>
-&emsp;&emsp;言出法随（拼音：yán chū fǎ suí），汉语成语，出自清代林则徐《奉旨前往广东查办海口事件传牌稿》，意思是话一说出口，法律就跟在后面；指法令一经公布就严格执行，如有违犯就依法处理。在笔者心中，这个成语的每个字有了新的解释，非常适合描述编程。编程是控制电流的艺术，本质是通过语言，控制计算机中的电流变化，从而实现对现实世界的模拟与控制，那么言出法随，正好描述了编程的四个层次：<br>
+<p style="text-indent: 2em; margin: 0;">言出法随（拼音：yán chū fǎ suí），汉语成语，出自清代林则徐《奉旨前往广东查办海口事件传牌稿》，意思是话一说出口，法律就跟在后面；指法令一经公布就严格执行，如有违犯就依法处理。在笔者心中，这个成语的每个字有了新的解释，非常适合描述编程。编程是控制电流的艺术，本质是通过语言，控制计算机中的电流变化，从而实现对现实世界的模拟与控制，那么言出法随，正好描述了编程的四个层次：</p>
 <br>
-&emsp;&emsp;言：自然语言 (中、英等)是意图 —— 人的想法。<br>
-&emsp;&emsp;出：高级语言 (Python、Java等)是逻辑 —— 业务代码；中级语言 (C语言等)是控制 —— 内存与硬件接口；低级语言 (机器码等)是指令 —— CPU 二进制命令。<br>
-&emsp;&emsp;法：电流变化 (0和1)是结果 —— 物理现象。<br>
-&emsp;&emsp;随：机器物理 (高低电压、电磁感应等)是现实 —— 物理开关动作。<br>
+<p style="text-indent: 2em; margin: 0;">言：自然语言 (中、英等)是意图 —— 人的想法。</p>
+<p style="text-indent: 2em; margin: 0;">出：高级语言 (Python、Java等)是逻辑 —— 业务代码；中级语言 (C语言等)是控制 —— 内存与硬件接口；低级语言 (机器码等)是指令 —— CPU 二进制命令。</p>
+<p style="text-indent: 2em; margin: 0;">法：电流变化 (0和1)是结果 —— 物理现象。</p>
+<p style="text-indent: 2em; margin: 0;">随：机器物理 (高低电压、电磁感应等)是现实 —— 物理开关动作。</p>
 <br>
-&emsp;&emsp;言出法随是方法论，本blog的目标是，在言出法随的过程中，体会计算思维这个认识论，最终知晓知行合一的本体论。<br>
+<p style="text-indent: 2em; margin: 0;">言出法随是方法论，本blog的目标是，在言出法随的过程中，体会计算思维这个认识论，最终知晓知行合一的本体论。</p>
 <br>
 2、从Python开始<br>
-&emsp;&emsp;从python入手，主要原因是，AI时代里，python可谓一枝独秀。本身作为胶水语言，站在无数语言的肩膀上，能够快速表达人的意图，损失点机器效率也无伤大雅。<br>
-&emsp;&emsp;我们先从python的大佬开始,先拜个山头：荷兰人，Guido Van Rossum“龟叔”。以后介绍linux和git的创始人linus torvalds“林纳斯”。<br>
-&emsp;&emsp;python目前用3.0以上版本，本blog不介绍2.0了。至于用windows,还是mac,或是linux发行版，以后玩转操作系统了，我们再深扒这些，网上的安装教程太多，笔者十几年的windows用户，后来虽然支持开源，但习惯性使用ubuntu。个人觉着debian是真稳定，但没法子，用的nvidia显卡，而nvidia和linux大佬的恩怨，导致专用驱动在linux发行版上一言难尽，好在ubuntu上表现较好，咱也不纠结这个了，至于arch、red hat等发行版，咱也不多说，希望linux多点适配软件，少点发行版吧。<br>
-&emsp;&emsp;言归正传，python在不同系统上都有强大的库支持，随意安装。<br>
+<p style="text-indent: 2em; margin: 0;">从python入手，主要原因是，AI时代里，python可谓一枝独秀。本身作为胶水语言，站在无数语言的肩膀上，能够快速表达人的意图，损失点机器效率也无伤大雅。</p>
+<p style="text-indent: 2em; margin: 0;">我们先从python的大佬开始,先拜个山头：荷兰人，Guido Van Rossum“龟叔”。以后介绍linux和git的创始人linus torvalds“林纳斯”。</p>
+<p style="text-indent: 2em; margin: 0;">python目前用3.0以上版本，本blog不介绍2.0了。至于用windows,还是mac,或是linux发行版，以后玩转操作系统了，我们再深扒这些，网上的安装教程太多，笔者十几年的windows用户，后来虽然支持开源，但习惯性使用ubuntu。个人觉着debian是真稳定，但没法子，用的nvidia显卡，而nvidia和linux大佬的恩怨，导致专用驱动在linux发行版上一言难尽，好在ubuntu上表现较好，咱也不纠结这个了，至于arch、red hat等发行版，咱也不多说，希望linux多点适配软件，少点发行版吧。</p>
+<p style="text-indent: 2em; margin: 0;">言归正传，python在不同系统上都有强大的库支持，随意安装。</p>
 <br>
 <br>
 <br>
 ### 一、基础
 1、新手需知<br>
 1.1 程序<br>
-&emsp;&emsp;程序 = 数据 (数据类型 + 量) + 算法（顺序 + 选择 + 循环）。<br>
-&emsp;&emsp;如果把程序类比成做菜，那么数据是食材，算法就是菜谱。<br>
-&emsp;&emsp;数据由数据类型和量构成，数据类型是量的容器，不同的数据类型适合存储不同类型的量。<br>
+<p style="text-indent: 2em; margin: 0;">程序 = 数据 (数据类型 + 量) + 算法（顺序 + 选择 + 循环）。</p>
+<p style="text-indent: 2em; margin: 0;">如果把程序类比成做菜，那么数据是食材，算法就是菜谱。</p>
+<p style="text-indent: 2em; margin: 0;">数据由数据类型和量构成，数据类型是量的容器，不同的数据类型适合存储不同类型的量。</p>
 算法就是顺序、选择、循环三大控制结构的组合。从哲学角度来说，<br>
-&emsp;&emsp;顺序是时间的流逝，选择是空间的分叉，循环是时间的轮回，数据是时空的坍缩。程序本质上是实现了时空的高效管理。<br>
+<p style="text-indent: 2em; margin: 0;">顺序是时间的流逝，选择是空间的分叉，循环是时间的轮回，数据是时空的坍缩。程序本质上是实现了时空的高效管理。</p>
 <br>
 1.2 I/O<br>
-&emsp;&emsp;input()和output()，构成了最基本的IO。python中output是print()函数，input()是输入函数。<br>
-&emsp;&emsp;print()函数，可以打印多个字符串，中间用','隔开，','会在输出后形成空格，可以可以打印计算,比如下面的输出都是2,加入字符串查看区别。<br>
+<p style="text-indent: 2em; margin: 0;">input()和output()，构成了最基本的IO。python中output是print()函数，input()是输入函数。</p>
+<p style="text-indent: 2em; margin: 0;">print()函数，可以打印多个字符串，中间用','隔开，','会在输出后形成空格，可以可以打印计算,比如下面的输出都是2,加入字符串查看区别。</p>
 
 ```python
 print('hello,world!')
@@ -41,8 +41,8 @@ print('1 + 1 =',1+1)
 ```
 
 <br>
-&emsp;&emsp;name=input()<br>
-&emsp;&emsp;进入交互模式，输入了什么，输出什么，也可以增加print()会更有意思。<br>
+<p style="text-indent: 2em; margin: 0;">name=input()</p>
+<p style="text-indent: 2em; margin: 0;">进入交互模式，输入了什么，输出什么，也可以增加print()会更有意思。</p>
 
 ```python
 name=input('请输入您的名字')
@@ -51,17 +51,17 @@ print('你好',name)
 
 <br>
 1.3 注释<br>
-&emsp;&emsp;关于注释，最前面 #和一个空格 ，这是标准样式，快捷键是 ctrl+/。<br>
-&emsp;&emsp;注释应始终放在代码的上方。<br>
+<p style="text-indent: 2em; margin: 0;">关于注释，最前面 #和一个空格 ，这是标准样式，快捷键是 ctrl+/。</p>
+<p style="text-indent: 2em; margin: 0;">注释应始终放在代码的上方。</p>
 <br>
 1.4 冒号<br>
-&emsp;&emsp;在python中，for语句，以及if、while、def等语句，都用冒号:表示代码块开始，并通过缩进来表示代码块的范围。<br>
+<p style="text-indent: 2em; margin: 0;">在python中，for语句，以及if、while、def等语句，都用冒号:表示代码块开始，并通过缩进来表示代码块的范围。</p>
 <br>
 1.5 编码<br>
-&emsp;&emsp;数据类型是不同容器，量是容器里的东西，合体就是数据。<br>
-&emsp;&emsp;计算机的最底层只认识1和0,编码就是一套翻译规则，把人类能理解的数据，变成python能理解的数据类型和量，最后变成计算机能理解的1和0。<br>
-&emsp;&emsp;1字节，1Byte,简写1B，是8bit,每个bit就是1或0,所以1字节能表示2的8次方，256种情况，即0-255。<br>
-&emsp;&emsp;核心进位：1024,这是二进制的写法<br>
+<p style="text-indent: 2em; margin: 0;">数据类型是不同容器，量是容器里的东西，合体就是数据。</p>
+<p style="text-indent: 2em; margin: 0;">计算机的最底层只认识1和0,编码就是一套翻译规则，把人类能理解的数据，变成python能理解的数据类型和量，最后变成计算机能理解的1和0。</p>
+<p style="text-indent: 2em; margin: 0;">1字节，1Byte,简写1B，是8bit,每个bit就是1或0,所以1字节能表示2的8次方，256种情况，即0-255。</p>
+<p style="text-indent: 2em; margin: 0;">核心进位：1024,这是二进制的写法</p>
 
 ```python
 B   = 1
@@ -70,8 +70,8 @@ MiB = 1 << 20  # 1,048,576 B
 GiB = 1 << 30  # 1,073,741,824 B
 ```
 
-&emsp;&emsp;核心进位：1000,这是硬盘、宽带Mbps的标准，这里有个彩蛋，千兆宽带，实际是1000Mbps,每秒1000Mb,叫千兆字节宽带更准确，也就是1000/8=125MB,所以刨去营销，千兆网理论下载速度是125MB/s。<br>
-&emsp;&emsp;还有个彩蛋，windows识别的是1024,但是linux识别的是1000,所以1T的硬盘，在linux上是1T,到了windows上只有931GB,准确说是931GiB,但是windows挖的坑太多，哈哈。提下内存条，那是满打满算GiB。所以无用的知识又多了个，内存厂家用1024,硬盘厂家用1000。                                 <br>
+<p style="text-indent: 2em; margin: 0;">核心进位：1000,这是硬盘、宽带Mbps的标准，这里有个彩蛋，千兆宽带，实际是1000Mbps,每秒1000Mb,叫千兆字节宽带更准确，也就是1000/8=125MB,所以刨去营销，千兆网理论下载速度是125MB/s。</p>
+<p style="text-indent: 2em; margin: 0;">还有个彩蛋，windows识别的是1024,但是linux识别的是1000,所以1T的硬盘，在linux上是1T,到了windows上只有931GB,准确说是931GiB,但是windows挖的坑太多，哈哈。提下内存条，那是满打满算GiB。所以无用的知识又多了个，内存厂家用1024,硬盘厂家用1000。                                 </p>
 
 ```python
 B  = 1
@@ -80,60 +80,60 @@ MB = 10**6     # 1,000,000 B
 GB = 10**9     # 1,000,000,000 B
 ```
 
-&emsp;&emsp;编码encode对应解码decode，解码就是将“机器读”的字节转回“看得懂”的文字。<br>
+<p style="text-indent: 2em; margin: 0;">编码encode对应解码decode，解码就是将“机器读”的字节转回“看得懂”的文字。</p>
 <br>
 1.5.1 演变<br>
-&emsp;&emsp;ASCII 1字节，是计算机编码的“鼻祖”，仅用 1 个字节存储英文字符，虽已成基础但无法表达全球语言。<br>
-&emsp;&emsp;GBK 2字节，是为了解决中文显示而诞生的过渡标准，由于仅在中文环境有效，正逐渐淡出历史舞台。<br>
-&emsp;&emsp;Unicode 2-4字节，为全球每个字符分配了唯一的“身份证号”，它统一了字符标准，但由于存储效率低，主要留在内存中工作。<br>
-&emsp;&emsp;UTF-8 1-4字节，凭借其巧妙的“变长”设计，完美兼顾了空间效率与兼容性，成为了当今互联网和 Python 3 的标准编码。<br>
+<p style="text-indent: 2em; margin: 0;">ASCII 1字节，是计算机编码的“鼻祖”，仅用 1 个字节存储英文字符，虽已成基础但无法表达全球语言。</p>
+<p style="text-indent: 2em; margin: 0;">GBK 2字节，是为了解决中文显示而诞生的过渡标准，由于仅在中文环境有效，正逐渐淡出历史舞台。</p>
+<p style="text-indent: 2em; margin: 0;">Unicode 2-4字节，为全球每个字符分配了唯一的“身份证号”，它统一了字符标准，但由于存储效率低，主要留在内存中工作。</p>
+<p style="text-indent: 2em; margin: 0;">UTF-8 1-4字节，凭借其巧妙的“变长”设计，完美兼顾了空间效率与兼容性，成为了当今互联网和 Python 3 的标准编码。</p>
 <br>
 1.5.2 ASCII码<br>
-&emsp;&emsp;（American Standard Code for Information Interchange，美国信息交换标准代码），计算机起源于美国，编码以英文为核心，这是绕不过去的起点。民间有中文编程的噱头，深入底层就会发现，<br>
-&emsp;&emsp;英语只有26个字母，加上10个数字和一些标点符号，美国工程师发现2^7,共128,能装下所有，就好比键盘也就不到100个键位，却能构造所有的文字。0-32留给了当时的打字机，33-47、58-64、91-96,123-127是标点符号，48-57是阿拉伯数字，65-90是大写字母，97-122是小写字母。<br>
+<p style="text-indent: 2em; margin: 0;">（American Standard Code for Information Interchange，美国信息交换标准代码），计算机起源于美国，编码以英文为核心，这是绕不过去的起点。民间有中文编程的噱头，深入底层就会发现，</p>
+<p style="text-indent: 2em; margin: 0;">英语只有26个字母，加上10个数字和一些标点符号，美国工程师发现2^7,共128,能装下所有，就好比键盘也就不到100个键位，却能构造所有的文字。0-32留给了当时的打字机，33-47、58-64、91-96,123-127是标点符号，48-57是阿拉伯数字，65-90是大写字母，97-122是小写字母。</p>
 1.5.3 GBK<br>
-&emsp;&emsp;西方世界用英文够了，但是东方世界得用中文啊。于是 国标扩（展码）就出来了，没错，汉语拼音的缩写。<br>
-&emsp;&emsp;这里面的祖师爷是GB2312，公务员知道这是个啥，收录了将近7000个汉字。<br>
-&emsp;&emsp;现在强制性的标准是GB18030，理论上可以映射Unicode。<br>
+<p style="text-indent: 2em; margin: 0;">西方世界用英文够了，但是东方世界得用中文啊。于是 国标扩（展码）就出来了，没错，汉语拼音的缩写。</p>
+<p style="text-indent: 2em; margin: 0;">这里面的祖师爷是GB2312，公务员知道这是个啥，收录了将近7000个汉字。</p>
+<p style="text-indent: 2em; margin: 0;">现在强制性的标准是GB18030，理论上可以映射Unicode。</p>
 1.5.4 Unicode<br>
-&emsp;&emsp;看名字也知道了，万国码，各家都要准备个编码。<br>
-&emsp;&emsp;由位于美国的 Unicode 联盟 牵头，试图给全球文字分配唯一编号。虽然标准是美国主导制定的，但它最终包含了中文、阿拉伯文甚至古埃及象形文字。<br>
-&emsp;&emsp;在 Python 3 中做了一个重大决定：默认字符串全部使用 Unicode。<br>
+<p style="text-indent: 2em; margin: 0;">看名字也知道了，万国码，各家都要准备个编码。</p>
+<p style="text-indent: 2em; margin: 0;">由位于美国的 Unicode 联盟 牵头，试图给全球文字分配唯一编号。虽然标准是美国主导制定的，但它最终包含了中文、阿拉伯文甚至古埃及象形文字。</p>
+<p style="text-indent: 2em; margin: 0;">在 Python 3 中做了一个重大决定：默认字符串全部使用 Unicode。</p>
 1.5.5 UTF-8<br>
-&emsp;&emsp;8-bit Unicode Transformation Format）是目前互联网上使用最广的 Unicode 实现方式。<br>
-&emsp;&emsp;一统天下了，既能表示Unicode,又可以缩短省存储。<br>
-&emsp;&emsp;Python 3 源码默认使用 UTF-8 编码，而内存中的字符串则统一采用 Unicode 进行处理和存储。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;现在默认的encode就是utf-8<br>
-&emsp;&emsp;示例 A：空字节<br>
+<p style="text-indent: 2em; margin: 0;">8-bit Unicode Transformation Format）是目前互联网上使用最广的 Unicode 实现方式。</p>
+<p style="text-indent: 2em; margin: 0;">一统天下了，既能表示Unicode,又可以缩短省存储。</p>
+<p style="text-indent: 2em; margin: 0;">Python 3 源码默认使用 UTF-8 编码，而内存中的字符串则统一采用 Unicode 进行处理和存储。</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">现在默认的encode就是utf-8</p>
+<p style="text-indent: 2em; margin: 0;">示例 A：空字节</p>
 
 ```python
 data_empty = ''.encode()
 print(data_empty)  # 输出: b''
 ```
 
-&emsp;&emsp;示例 B：数字字符字节<br>
+<p style="text-indent: 2em; margin: 0;">示例 B：数字字符字节</p>
 
 ```python
 data_one = '1'.encode()
 print(data_one)    # 输出: b'1'
 ```
 
-&emsp;&emsp;示例 C：中文文本字节<br>
+<p style="text-indent: 2em; margin: 0;">示例 C：中文文本字节</p>
 
 ```python
 data_cn = '中'.encode('utf-8')
 print(data_cn)     # 输出: b'\xe4\xb8\xad'
 ```
 
-&emsp;&emsp;示例 D：中文文本字节（默认 UTF-8 编码，占 3 字节）<br>
+<p style="text-indent: 2em; margin: 0;">示例 D：中文文本字节（默认 UTF-8 编码，占 3 字节）</p>
 
 ```python
 data = '中'.encode()
 print(data)     # 输出: b'\xe4\xb8\xad'
 ```
 
-&emsp;&emsp;示例 E：Emoji 表情字节（通常占 4 字节）<br>
+<p style="text-indent: 2em; margin: 0;">示例 E：Emoji 表情字节（通常占 4 字节）</p>
 
 ```python
 data_emoji = '🐍'.encode('utf-8')
@@ -142,38 +142,38 @@ print(data_emoji)  # 输出: b'\xf0\x9f\x90\x8d'
 
 <br>
 1.6 脚本第一行<br>
-&emsp;&emsp;#!/usr/bin python <br>
-&emsp;&emsp;#!：是一个特殊符号组合，告诉 Linux 内核，接下来的路径是执行本文件的解释器。<br>
-&emsp;&emsp;/usr/bin/：这是存放系统命令的目录。<br>
-&emsp;&emsp;python：这是你指定的解释器名称。<br>
-&emsp;&emsp;写脚本的时候，放在第一行，类似windows上的echo。<br>
+<p style="text-indent: 2em; margin: 0;">#!/usr/bin python </p>
+<p style="text-indent: 2em; margin: 0;">#!：是一个特殊符号组合，告诉 Linux 内核，接下来的路径是执行本文件的解释器。</p>
+<p style="text-indent: 2em; margin: 0;">/usr/bin/：这是存放系统命令的目录。</p>
+<p style="text-indent: 2em; margin: 0;">python：这是你指定的解释器名称。</p>
+<p style="text-indent: 2em; margin: 0;">写脚本的时候，放在第一行，类似windows上的echo。</p>
 <br>
 1.7 Python解释器<br>
-&emsp;&emsp;不同平台，不同cpu上，有不同的解释器，简单说来，就是让python最终控制0和1,不要纠结过程。如果控制失败，解释器会报错。<br>
+<p style="text-indent: 2em; margin: 0;">不同平台，不同cpu上，有不同的解释器，简单说来，就是让python最终控制0和1,不要纠结过程。如果控制失败，解释器会报错。</p>
 <br>
 2、数据类型<br>
 2.1 数值类型 (Numeric)：包括整数 int（如 10）、浮点数 float（如 3.14）和复数 complex。<br>
-&emsp;&emsp;整数根据不同进制，常用的有2进制，10进制，16进制，不同进制间的转化很考验数量思维。一个数中间加上'_'，主要是为了数清个数，没有数量影响。<br>
-&emsp;&emsp;浮点数，就是小数，用科学计数法，用e表示10,比如1e8,就是1亿。<br>
-&emsp;&emsp;整数和浮点数可以相互转换，可以转成复数，复数不能逆向转化。计算机数据是离散的，整数精确，浮点数可能有四舍五入无限趋近。<br>
-&emsp;&emsp;整数和浮点数是一维的，有大小，复数有实部和虚部，是二维的，没有大小。<br>
+<p style="text-indent: 2em; margin: 0;">整数根据不同进制，常用的有2进制，10进制，16进制，不同进制间的转化很考验数量思维。一个数中间加上'_'，主要是为了数清个数，没有数量影响。</p>
+<p style="text-indent: 2em; margin: 0;">浮点数，就是小数，用科学计数法，用e表示10,比如1e8,就是1亿。</p>
+<p style="text-indent: 2em; margin: 0;">整数和浮点数可以相互转换，可以转成复数，复数不能逆向转化。计算机数据是离散的，整数精确，浮点数可能有四舍五入无限趋近。</p>
+<p style="text-indent: 2em; margin: 0;">整数和浮点数是一维的，有大小，复数有实部和虚部，是二维的，没有大小。</p>
 <br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;浮点数转整数 (截断处理)<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">浮点数转整数 (截断处理)</p>
 
 ```python
 pi = 3.99
 print(int(pi))  # 输出: 3
 ```
 
-&emsp;&emsp;整数转浮点数<br>
+<p style="text-indent: 2em; margin: 0;">整数转浮点数</p>
 
 ```python
 count = 10
 print(float(count))  # 输出: 10.0
 ```
 
-&emsp;&emsp;转化为复数<br>
+<p style="text-indent: 2em; margin: 0;">转化为复数</p>
 
 ```python
 num = 5
@@ -182,11 +182,11 @@ print(complex(num))  # 输出: (5+0j)
 
 <br>
 2.2 字符串类型 (String)：使用单引号或双引号括起来的文本 str（如 "Hello"）。<br>
-&emsp;&emsp;英文模式下，用单引号，或者双引号表示。<br>
-&emsp;&emsp;转义符\，\n表示换行，\t表示表格，\\表示\，r''里面的字符不转<br>
-&emsp;&emsp;换行 \n,还有'''...''''，其中...是提示符<br>
+<p style="text-indent: 2em; margin: 0;">英文模式下，用单引号，或者双引号表示。</p>
+<p style="text-indent: 2em; margin: 0;">转义符\，\n表示换行，\t表示表格，\\表示\，r''里面的字符不转</p>
+<p style="text-indent: 2em; margin: 0;">换行 \n,还有'''...''''，其中...是提示符</p>
 <br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 1. 转义与r''<br>
 
 ```python
@@ -204,8 +204,8 @@ print('''第一行
 ```
 
 <br>
-&emsp;&emsp;字符串的格式化，%，%d是整数，%f是浮点数，%s是字符串，%x是十六进制整数：<br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">字符串的格式化，%，%d是整数，%f是浮点数，%s是字符串，%x是十六进制整数：</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 1. 整数 %d (常用语数量、ID)<br>
 
 ```python
@@ -213,7 +213,7 @@ print("我有 %d 个苹果。" % 5)
 ```
 
 2. 浮点数 %f (常用语金额、百分比)<br>
-&emsp;&emsp;%.2f 表示保留两位小数，会自动四舍五入<br>
+<p style="text-indent: 2em; margin: 0;">%.2f 表示保留两位小数，会自动四舍五入</p>
 
 ```python
 print("今天的气温是 %.1f°C。" % 26.88) 
@@ -232,9 +232,9 @@ print("十进制 255 转十六进制是: %x" % 255)
 ```
 
 <br>
-&emsp;&emsp;后来有"{} {}".format(a, b)，从0开始<br>
+<p style="text-indent: 2em; margin: 0;">后来有"{} {}".format(a, b)，从0开始</p>
 <br>
-&emsp;&emsp;在python里，f-string<br>
+<p style="text-indent: 2em; margin: 0;">在python里，f-string</p>
 
 ```python
 name = "小明"
@@ -243,11 +243,11 @@ print(f"你好, {name}") # 字符串里写变量，极其直观，变量后面�
 
 <br>
 2.3 布尔类型 (Boolean)：只有两个值：True 或 False，常用于逻辑判断。<br>
-&emsp;&emsp;1是true,0是false,逻辑正确是true,逻辑错误是false,1和0加上and、or、not与或非，可以推演出整个计算世界，Boolean籍籍无名了一辈子，死后他的思想却光芒万丈。<br>
-&emsp;&emsp;空值，在计算世界中是none,不是0<br>
+<p style="text-indent: 2em; margin: 0;">1是true,0是false,逻辑正确是true,逻辑错误是false,1和0加上and、or、not与或非，可以推演出整个计算世界，Boolean籍籍无名了一辈子，死后他的思想却光芒万丈。</p>
+<p style="text-indent: 2em; margin: 0;">空值，在计算世界中是none,不是0</p>
 <br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;1 代表 True，0 代表 False<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">1 代表 True，0 代表 False</p>
 
 ```python
 print(1 and 0)  # 输出: 0 (逻辑与：一假则假)
@@ -258,14 +258,14 @@ print(not 1)    # 输出: False (逻辑非)
 <br>
 2.4 序列类型 (Sequence)：包括可变的列表 list（如 [1, 2]）和不可变的元组 tuple（如 (1, 2)）。<br>
 2.4.1 list列表，有序队列，可以索引，也就是找到对应人，一般排队到队尾，也可插队，还有删除、弹出、排序等操作<br>
-&emsp;&emsp;示例A<br>
+<p style="text-indent: 2em; margin: 0;">示例A</p>
 
 ```python
 none = list()
 print(none)    #输出是[]
 ```
 
-&emsp;&emsp;示例B<br>
+<p style="text-indent: 2em; margin: 0;">示例B</p>
 --- 1. 创建与显示 ---<br>
 
 ```python
@@ -348,31 +348,31 @@ t=(1,2) # 2个
 <br>
 2.5 映射与集合 (Mapping & Set)：包括存储键值对的字典 dict（如 {"key": "value"}）和无序不重复的集合 set。dict是找东西，set是比关系。<br>
 2.5.1 在python中的dict,在其他语言中是map,核心逻辑是KV，也就是key-value键值存储。<br>
-&emsp;&emsp;之所以用dict,源于list的查找虽然有序，但要遍历，耗时就长了。笔者在cloudflare中部署项目的时候，遇到了KV,当时不明所以。其实这就是算法里面的哈希算法。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;方法一，定义字典 d<br>
+<p style="text-indent: 2em; margin: 0;">之所以用dict,源于list的查找虽然有序，但要遍历，耗时就长了。笔者在cloudflare中部署项目的时候，遇到了KV,当时不明所以。其实这就是算法里面的哈希算法。</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">方法一，定义字典 d</p>
 
 ```python
 d = {'a': 1, 'b': 2, 'c': 3}
 ```
 
-&emsp;&emsp;查看字典<br>
+<p style="text-indent: 2em; margin: 0;">查看字典</p>
 
 ```python
 print(d)  # 输出: {'a': 1, 'b': 2, 'c': 3}
 ```
 
-&emsp;&emsp;方法二，dict()函数<br>
+<p style="text-indent: 2em; margin: 0;">方法二，dict()函数</p>
 
 ```python
 d = dict(a=1, b=2, c=3)
 ```
 
-&emsp;&emsp;dict本质是用空间换时间，dict的key必须是不可变对象，tuple元组可以转换成dict字典。<br>
+<p style="text-indent: 2em; margin: 0;">dict本质是用空间换时间，dict的key必须是不可变对象，tuple元组可以转换成dict字典。</p>
 <br>
 2.5.2 set集合，就是只有key没有value的dict。底层实现上都是hash table哈希表实现功能。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;绝活：去重<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">绝活：去重</p>
 
 ```python
 old = [1, 2, 2, 3, 3, 3]
@@ -380,7 +380,7 @@ new = list(set(old))
 print(new) # 输出: [1, 2, 3]
 ```
 
-&emsp;&emsp;绝活：集合运算<br>
+<p style="text-indent: 2em; margin: 0;">绝活：集合运算</p>
 
 ```python
 a = {1, 2, 3}
@@ -392,7 +392,7 @@ print(a - b) # 差集: {1, 2} (a有b没有)
 
 <br>
 2.6[]list,()tuple,{}dict/set<br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 1. [] 列表 (List) - 最常用，可随便改<br>
 
 ```python
@@ -408,7 +408,7 @@ print(f"List: {my_list}")
 my_tuple = (1, 2, 2, 3)
 ```
 
-&emsp;&emsp;my_tuple[0] = 100     # 报错！不可修改<br>
+<p style="text-indent: 2em; margin: 0;">my_tuple[0] = 100     # 报错！不可修改</p>
 
 ```python
 print(f"Tuple: {my_tuple}")
@@ -431,15 +431,15 @@ print(f"Set: {my_set}") # 输出: {1, 2, 3}
 
 <br>
 3、量<br>
-&emsp;&emsp;变量使用小写字母命名（如 score），用于记录经常改变的临时状态或计数器。<br>
-&emsp;&emsp;常量则约定使用全大写字母（如 SCORE），用于存储物理常数或配置信息，且在程序运行中保持不变。<br>
+<p style="text-indent: 2em; margin: 0;">变量使用小写字母命名（如 score），用于记录经常改变的临时状态或计数器。</p>
+<p style="text-indent: 2em; margin: 0;">常量则约定使用全大写字母（如 SCORE），用于存储物理常数或配置信息，且在程序运行中保持不变。</p>
 变量、常量作为动态语言，可以是任何数据类型，单个数据、组合数据都可以。<br>
-&emsp;&emsp;但是一定定义成静态语言，后面就不能再变了。比如 int a=1，那么后面的a只能是1<br>
-&emsp;&emsp;=很特殊，在程序中是赋值而非等于，后面赋值给前面，前面指向到后面<br>
-&emsp;&emsp;/中，整除是//，取余是%，想要小数用 /，想要整数商用 //，想要余数用 %。<br>
+<p style="text-indent: 2em; margin: 0;">但是一定定义成静态语言，后面就不能再变了。比如 int a=1，那么后面的a只能是1</p>
+<p style="text-indent: 2em; margin: 0;">=很特殊，在程序中是赋值而非等于，后面赋值给前面，前面指向到后面</p>
+<p style="text-indent: 2em; margin: 0;">/中，整除是//，取余是%，想要小数用 /，想要整数商用 //，想要余数用 %。</p>
 <br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;7 除以 3<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">7 除以 3</p>
 
 ```python
 print
@@ -452,8 +452,8 @@ print(7 % 3)   # 结果: 1  (还剩 1 个苹果)
 
 <br>
 4、顺序<br>
-&emsp;&emsp;顺序是程序的基本结构，代码从上到下依次执行，没有任何分支和跳转，这是最简单的因果。<br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">顺序是程序的基本结构，代码从上到下依次执行，没有任何分支和跳转，这是最简单的因果。</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 
 ```python
 print("开始1")    # 第一步
@@ -461,12 +461,12 @@ print("处理2")    # 第二步
 print("结束3")    # 第三步 
 ```
 
-&emsp;&emsp;顺序是程序的基础，所有的程序都离不开顺序。计算机有很多的任务就是排序，比如操作系统的任务调度，数据库的索引排序，搜索引擎的结果排序等等。排序算法，对时间和空间的复杂度，有大O表示法。<br>
+<p style="text-indent: 2em; margin: 0;">顺序是程序的基础，所有的程序都离不开顺序。计算机有很多的任务就是排序，比如操作系统的任务调度，数据库的索引排序，搜索引擎的结果排序等等。排序算法，对时间和空间的复杂度，有大O表示法。</p>
 <br>
 5、条件判断<br>
 5.1 if then/用:进行了替换，并且换行强制向右缩进<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;if 1 then print(1) # 其他语言<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">if 1 then print(1) # 其他语言</p>
 
 ```python
 if 1: 
@@ -474,7 +474,7 @@ if 1:
 ```
 
 <br>
-&emsp;&emsp;二元模型<br>
+<p style="text-indent: 2em; margin: 0;">二元模型</p>
 
 ```python
 if 2 > 1:          # 判断条件
@@ -485,7 +485,7 @@ else:
 
 <br>
 <br>
-&emsp;&emsp;漏斗模型：逻辑从上往下流动<br>
+<p style="text-indent: 2em; margin: 0;">漏斗模型：逻辑从上往下流动</p>
 
 ```python
 if 1:
@@ -500,8 +500,8 @@ else:
 
 <br>
 5.2 match<br>
-&emsp;&emsp;针对if...elif...elif...else的简化<br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">针对if...elif...elif...else的简化</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 
 ```python
 value=2
@@ -517,8 +517,8 @@ match value:
 ```
 
 <br>
-&emsp;&emsp;对比if elif和match case ，根据点的维度（2D 或 3D）进行不同处理<br>
-&emsp;&emsp;使用 if...elif...else 语句实现<br>
+<p style="text-indent: 2em; margin: 0;">对比if elif和match case ，根据点的维度（2D 或 3D）进行不同处理</p>
+<p style="text-indent: 2em; margin: 0;">使用 if...elif...else 语句实现</p>
 
 ```python
 point = (10, 20, 30)
@@ -530,7 +530,7 @@ elif len(point) == 3:
     print(f"3D点: {x}, {y}, {z}")
 ```
 
-&emsp;&emsp;使用 match 语句简化上述逻辑<br>
+<p style="text-indent: 2em; margin: 0;">使用 match 语句简化上述逻辑</p>
 
 ```python
 point = (10, 20, 30)
@@ -541,13 +541,13 @@ match point:
         print(f"3D点: {x}, {y}, {z}")
 ```
 
-&emsp;&emsp;if是万能的，match是专用的。<br>
+<p style="text-indent: 2em; margin: 0;">if是万能的，match是专用的。</p>
 <br>
 6、循环 <br>
-&emsp;&emsp;循环是重复执行某段代码的结构，直到满足某个条件才停止。循环可以分为两大类：确定性循环和非确定性循环。<br>
+<p style="text-indent: 2em; margin: 0;">循环是重复执行某段代码的结构，直到满足某个条件才停止。循环可以分为两大类：确定性循环和非确定性循环。</p>
 6.1 确定性循环是指循环次数在开始时就已确定的情况，通常使用 for...in 循环来实现。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;计算 1 到 10 的和,for x in ... 代表从list列表里依次取值给x<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">计算 1 到 10 的和,for x in ... 代表从list列表里依次取值给x</p>
 
 ```python
 sum = 0
@@ -557,9 +557,9 @@ print(sum)        # 输出: 55
 ```
 
 <br>
-&emsp;&emsp;上面这个列表，1-10还是可以手输入的，但是如果是1-100,手输入就不现实了，这时候就可以用range()函数生成一个数列。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;计算 1 到 100 的和<br>
+<p style="text-indent: 2em; margin: 0;">上面这个列表，1-10还是可以手输入的，但是如果是1-100,手输入就不现实了，这时候就可以用range()函数生成一个数列。</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">计算 1 到 100 的和</p>
 
 ```python
 sum = 0
@@ -568,10 +568,10 @@ for x in range(1, 101):  # range(1, 101) 生成从 1 到 100 的整数序列
 print(sum)                # 输出: 5050
 ```
 
-&emsp;&emsp;range()函数可以接受一个、两个或三个参数，分别表示起始值、终止值和步长。默认起始值为0，步长为1。 在python中，有个数量原则，减法就是个数，左闭右开区间，也就是包含起始值，不包含终止值。还有个简写，range(10)代表从0开始，到9结束。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;上述的例子也可以写成下面这样：<br>
-&emsp;&emsp;计算 1 到 100 的和<br>
+<p style="text-indent: 2em; margin: 0;">range()函数可以接受一个、两个或三个参数，分别表示起始值、终止值和步长。默认起始值为0，步长为1。 在python中，有个数量原则，减法就是个数，左闭右开区间，也就是包含起始值，不包含终止值。还有个简写，range(10)代表从0开始，到9结束。</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">上述的例子也可以写成下面这样：</p>
+<p style="text-indent: 2em; margin: 0;">计算 1 到 100 的和</p>
 
 ```python
 sum = 0
@@ -582,8 +582,8 @@ print(sum)             # 输出: 5050
 
 <br>
 6.2 非确定性循环是指循环次数在开始时不确定，通常使用 while 循环来实现，直到满足某个条件才停止。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;计算 1 到 100 的和，使用 while 循环<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">计算 1 到 100 的和，使用 while 循环</p>
 
 ```python
 sum = 0
@@ -594,12 +594,12 @@ while x <= 100:       # 当 x 小于等于 100 时继续循环
 print(sum)            # 输出: 5050  
 ```
 
-&emsp;&emsp;这里有个英语的思维定式，很多新手分不清if和while的区别。if是1次，是判断，while是多次，是循环。<br>
+<p style="text-indent: 2em; margin: 0;">这里有个英语的思维定式，很多新手分不清if和while的区别。if是1次，是判断，while是多次，是循环。</p>
 <br>
 6.3 中断循环<br>
-&emsp;&emsp;有时候我们需要在循环中途停止循环，或者跳过某些迭代，这时可以使用 break 和 continue 语句。<br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;使用 break 语句中断循环<br>
+<p style="text-indent: 2em; margin: 0;">有时候我们需要在循环中途停止循环，或者跳过某些迭代，这时可以使用 break 和 continue 语句。</p>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">使用 break 语句中断循环</p>
 
 ```python
 for x in range(1, 101):
@@ -608,7 +608,7 @@ for x in range(1, 101):
     print(x)           # 输出: 1 到 10
 ```
 
-&emsp;&emsp;使用 continue 语句跳过当前迭代<br>
+<p style="text-indent: 2em; margin: 0;">使用 continue 语句跳过当前迭代</p>
 
 ```python
 for x in range(1, 101):
@@ -617,7 +617,7 @@ for x in range(1, 101):
     print(x)           # 输出: 1 到 100 的所有奇数 
 ```
 
-&emsp;&emsp;break和continue最大的区别是，break是彻底退出循环，而continue只是跳过当前迭代，继续下一次循环。<br>
+<p style="text-indent: 2em; margin: 0;">break和continue最大的区别是，break是彻底退出循环，而continue只是跳过当前迭代，继续下一次循环。</p>
 ### 二、函数
 1、万物皆函数<br>
 1.1 “Everything is a function”，约翰·麦卡锡 (John McCarthy) 的追随者，把这个作为信仰，他们认为“状态是万恶之源，变换才是宇宙真理”。与之对应的是面向对象编程的 “Everything is an object”。<br>
@@ -625,7 +625,7 @@ for x in range(1, 101):
 1.3 函数式编程强调的正是“能量”的流动，而不是“物质”的堆积。如果想要改变output,只能改变input,或者改变函数f()本身。衍生出来的解耦思维，可以把大问题拆解成小问题，把复杂拆解成简单。如果某个环节出现问题，可以单独替换这个环节，而不影响整体。<br>
 <br>
 2、数学维度<br>
-&emsp;&emsp;y = f(x)<br>
+<p style="text-indent: 2em; margin: 0;">y = f(x)</p>
 2.1 自变量x，函数f，因变量y<br>
 2.2 一元函数，二元函数，多元函数<br>
 2.3 映射关系：单射，满射，双射<br>
@@ -641,7 +641,7 @@ for x in range(1, 101):
 2.13 函数空间与泛函分析<br>
 2.14 常见函数类型：线性函数，二次函数，指数函数，对数函数，三角函数，反三角函数，超越函数等<br>
 2.15 应用领域：物理学，工程学，经济学，生物学，计算机科学等<br>
-&emsp;&emsp;看着是不是头大了，编程语言中的函数，其实就是数学中函数的简化版，主要是为了实现代码的复用和模块化设计。编程只是工具，编程水平的高低，决定于对问题的理解和抽象能力，而不只是对语法的熟练程度。<br>
+<p style="text-indent: 2em; margin: 0;">看着是不是头大了，编程语言中的函数，其实就是数学中函数的简化版，主要是为了实现代码的复用和模块化设计。编程只是工具，编程水平的高低，决定于对问题的理解和抽象能力，而不只是对语法的熟练程度。</p>
 <br>
 3、调用函数<br>
 3.1 调用函数，看着很高级，实际很好理解。你用锅炒菜，不会从挖矿石冶铁锻造锅开始吧？直接调用锅来炒菜，那么这个锅就是函数，调用锅就是调用函数。参数就是你放进锅里的菜和调料，返回值就是炒好的菜。<br>
@@ -658,7 +658,7 @@ def 函数名(参数列表):
 ```
 
 <br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 
 ```python
 def 锅(菜, 调料="盐"):
@@ -667,7 +667,7 @@ def 锅(菜, 调料="盐"):
 print(锅("青菜", "酱油")) #输出结果，炒了青菜，加了酱油
 ```
 
-&emsp;&emsp;把这个 锅() 函数保存下来 自制锅.py，以后就可以直接调用了。<br>
+<p style="text-indent: 2em; margin: 0;">把这个 锅() 函数保存下来 自制锅.py，以后就可以直接调用了。</p>
 
 ```python
 from 自制锅 import 锅
@@ -717,7 +717,7 @@ print(关键字参数(name="Alice", age=30)) #输出结果，{'name': 'Alice', '
 ```
 
 <br>
-&emsp;&emsp;示例：综合使用各种参数类型<br>
+<p style="text-indent: 2em; margin: 0;">示例：综合使用各种参数类型</p>
 
 ```python
 def 终极点餐(主食, 小菜="泡菜", *加料, 龙虾=0, **备注):
@@ -734,7 +734,7 @@ def 终极点餐(主食, 小菜="泡菜", *加料, 龙虾=0, **备注):
 print(终极点餐("米饭", "黄瓜", "鸡蛋", "豆腐", 龙虾=2, 口味="微辣", 送餐时间="30分钟内"))
 ```
 
-&emsp;&emsp;输出结果，主食：米饭，小菜：黄瓜，加料：('鸡蛋', '豆腐')，龙虾：2，备注：{'口味': '微辣', '送餐时间': '30分钟内'} <br>
+<p style="text-indent: 2em; margin: 0;">输出结果，主食：米饭，小菜：黄瓜，加料：('鸡蛋', '豆腐')，龙虾：2，备注：{'口味': '微辣', '送餐时间': '30分钟内'} </p>
 <br>
 4.4 返回值类型：单个值，多个值，None<br>
 4.5 充分利用pass,如果def时候还没想好函数体，可以用pass占位，表示什么都不做，等以后再补充。<br>
@@ -747,7 +747,7 @@ def 未完成的函数():
 4.6 在交互环境中def函数时候，会有... 提示符，表示函数体还没有结束。回车两次，函数定义结束<br>
 <br>
 5、递归函数：函数自己调用自己，先递再归<br>
-&emsp;&emsp;示例<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
 
 ```python
 def 递归函数(n):
@@ -758,21 +758,21 @@ def 递归函数(n):
 print(递归函数(5)) #输出结果，120 (5!)
 ```
 
-&emsp;&emsp;用弹簧类比，向下压（递）：5 -> 4 -> 3 -> 2 -> 1。 向上弹（归）：1 -> 2 -> 6 -> 24 -> 120。<br>
-&emsp;&emsp;递归函数(n)写成 f(n) 更清晰一些。<br>
-&emsp;&emsp;f(5)<br>
-&emsp;&emsp;= 5 * f(4)<br>
-&emsp;&emsp;= 5 * (4 * f(3))<br>
-&emsp;&emsp;= 5 * (4 * (3 * f(2)))<br>
-&emsp;&emsp;= 5 * (4 * (3 * (2 * f(1))))<br>
-&emsp;&emsp;= 5 * 4 * 3 * 2 * 1<br>
-&emsp;&emsp;= 5 * 4 * 3 * 2<br>
-&emsp;&emsp;= 5 * 4 * 6<br>
-&emsp;&emsp;= 5 * 24<br>
-&emsp;&emsp;= 120<br>
+<p style="text-indent: 2em; margin: 0;">用弹簧类比，向下压（递）：5 -> 4 -> 3 -> 2 -> 1。 向上弹（归）：1 -> 2 -> 6 -> 24 -> 120。</p>
+<p style="text-indent: 2em; margin: 0;">递归函数(n)写成 f(n) 更清晰一些。</p>
+<p style="text-indent: 2em; margin: 0;">f(5)</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * f(4)</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * (4 * f(3))</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * (4 * (3 * f(2)))</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * (4 * (3 * (2 * f(1))))</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * 4 * 3 * 2 * 1</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * 4 * 3 * 2</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * 4 * 6</p>
+<p style="text-indent: 2em; margin: 0;">= 5 * 24</p>
+<p style="text-indent: 2em; margin: 0;">= 120</p>
 <br>
-&emsp;&emsp;示例<br>
-&emsp;&emsp;汉诺塔问题，把n个盘子理解成第n层和上面的n-1层，A、B、C三根柱子理解成起始柱子、中转柱子、目标柱子。三个宏观步骤：<br>
+<p style="text-indent: 2em; margin: 0;">示例</p>
+<p style="text-indent: 2em; margin: 0;">汉诺塔问题，把n个盘子理解成第n层和上面的n-1层，A、B、C三根柱子理解成起始柱子、中转柱子、目标柱子。三个宏观步骤：</p>
 1. 让路，把上面的 n-1 个盘子从 A 搬到 B，借助 C<br>
 2. 到位，把最下面那个最大的盘子从 A 搬到 C<br>
 3. 重聚，把留在 B 的 n-1 个盘子搬到 C，借助 A<br>
@@ -782,94 +782,94 @@ def move(n, a, b, c):
     if n == 1:
 ```
 
-&emsp;&emsp;如果只有一个盘子，直接从 A 搬到 C<br>
+<p style="text-indent: 2em; margin: 0;">如果只有一个盘子，直接从 A 搬到 C</p>
 
 ```python
         print(a, '-->', c)
     else:
 ```
 
-&emsp;&emsp;第一步：把上面的 n-1 个从 a 搬到 b，借助 c<br>
+<p style="text-indent: 2em; margin: 0;">第一步：把上面的 n-1 个从 a 搬到 b，借助 c</p>
 
 ```python
         move(n - 1, a, c, b)
 ```
 
-&emsp;&emsp;第二步：把最下面那个最大的从 a 搬到 c<br>
+<p style="text-indent: 2em; margin: 0;">第二步：把最下面那个最大的从 a 搬到 c</p>
 
 ```python
         print(a, '-->', c)
 ```
 
-&emsp;&emsp;第三步：把留在 b 的 n-1 个搬到 c，借助 a<br>
+<p style="text-indent: 2em; margin: 0;">第三步：把留在 b 的 n-1 个搬到 c，借助 a</p>
 
 ```python
         move(n - 1, b, a, c)
 ```
 
-&emsp;&emsp;调用测试<br>
+<p style="text-indent: 2em; margin: 0;">调用测试</p>
 
 ```python
 move(3, 'A', 'B', 'C')
 ```
 
-&emsp;&emsp;move(3, A, B, C) 的执行过程：<br>
+<p style="text-indent: 2em; margin: 0;">move(3, A, B, C) 的执行过程：</p>
 1. [n=3] 把上面2个从 A->B:<br>
-   - A --> C<br>
-   - A --> B<br>
-   - C --> B<br>
+- A --> C<br>
+- A --> B<br>
+- C --> B<br>
 2. [n=3] 把最下面最大的从 A->C:<br>
-   - A --> C<br>
+- A --> C<br>
 3. [n=3] 把留在 B 的2个从 B->C:<br>
-   - B --> A<br>
-   - B --> C<br>
-   - A --> C<br>
-&emsp;&emsp;最终输出：<br>
-&emsp;&emsp;A --> C<br>
-&emsp;&emsp;A --> B<br>
-&emsp;&emsp;C --> B<br>
-&emsp;&emsp;A --> C<br>
-&emsp;&emsp;B --> A<br>
-&emsp;&emsp;B --> C<br>
-&emsp;&emsp;A --> C <br>
+- B --> A<br>
+- B --> C<br>
+- A --> C<br>
+<p style="text-indent: 2em; margin: 0;">最终输出：</p>
+<p style="text-indent: 2em; margin: 0;">A --> C</p>
+<p style="text-indent: 2em; margin: 0;">A --> B</p>
+<p style="text-indent: 2em; margin: 0;">C --> B</p>
+<p style="text-indent: 2em; margin: 0;">A --> C</p>
+<p style="text-indent: 2em; margin: 0;">B --> A</p>
+<p style="text-indent: 2em; margin: 0;">B --> C</p>
+<p style="text-indent: 2em; margin: 0;">A --> C </p>
 <br>
 【汉诺塔：老板指挥牛马手册】<br>
-&emsp;&emsp;指令格式：move(盘子数n, 起点a, 中转b, 终点c)<br>
-&emsp;&emsp;当你想搬动 n 个盘子时：<br>
+<p style="text-indent: 2em; margin: 0;">指令格式：move(盘子数n, 起点a, 中转b, 终点c)</p>
+<p style="text-indent: 2em; margin: 0;">当你想搬动 n 个盘子时：</p>
 1. 【腾地方】：<br>
-&emsp;&emsp;下令给下属：“去，把上面 (n-1) 个盘子从 [起点] 搬到 [中转站]！”<br>
-&emsp;&emsp;(代码：move(n-1, a, c, b) -> 这里的终点变成了b)<br>
+<p style="text-indent: 2em; margin: 0;">下令给下属：“去，把上面 (n-1) 个盘子从 [起点] 搬到 [中转站]！”</p>
+<p style="text-indent: 2em; margin: 0;">(代码：move(n-1, a, c, b) -> 这里的终点变成了b)</p>
 2. 【干大事】：<br>
-&emsp;&emsp;你自己动手：“我把最底下那个盘子从 [起点] 搬到 [终点]。”<br>
-&emsp;&emsp;(代码：print(a --> c) -> 这是唯一真正打印出来的动作)<br>
+<p style="text-indent: 2em; margin: 0;">你自己动手：“我把最底下那个盘子从 [起点] 搬到 [终点]。”</p>
+<p style="text-indent: 2em; margin: 0;">(代码：print(a --> c) -> 这是唯一真正打印出来的动作)</p>
 3. 【大合体】：<br>
-&emsp;&emsp;下令给下属：“去，把刚才停在 [中转站] 的 (n-1) 个盘子挪到 [终点]！”<br>
-&emsp;&emsp;(代码：move(n-1, b, a, c) -> 这里的起点变成了b)<br>
+<p style="text-indent: 2em; margin: 0;">下令给下属：“去，把刚才停在 [中转站] 的 (n-1) 个盘子挪到 [终点]！”</p>
+<p style="text-indent: 2em; margin: 0;">(代码：move(n-1, b, a, c) -> 这里的起点变成了b)</p>
 【为什么参数位置会变？】<br>
-&emsp;&emsp;因为你下令的时候，任务的目的地变了：<br>
-&emsp;&emsp;第一步：目的是腾出空间，所以[中转站]成了下属的[目的地]。<br>
-&emsp;&emsp;第三步：目的是最后集合，所以[中转站]成了下属的[起点]。<br>
+<p style="text-indent: 2em; margin: 0;">因为你下令的时候，任务的目的地变了：</p>
+<p style="text-indent: 2em; margin: 0;">第一步：目的是腾出空间，所以[中转站]成了下属的[目的地]。</p>
+<p style="text-indent: 2em; margin: 0;">第三步：目的是最后集合，所以[中转站]成了下属的[起点]。</p>
 【最底层真相】：<br>
-&emsp;&emsp;当 n = 1 时，下属没法再找下属了，只能亲自动手搬。<br>
-&emsp;&emsp;大多数的输出结果，其实都是这些“最底层员工”亲手搬运的记录。<br>
+<p style="text-indent: 2em; margin: 0;">当 n = 1 时，下属没法再找下属了，只能亲自动手搬。</p>
+<p style="text-indent: 2em; margin: 0;">大多数的输出结果，其实都是这些“最底层员工”亲手搬运的记录。</p>
 <br>
-&emsp;&emsp;用数学的逻辑来描述这个过程：f(n) = f(n-1) + 1 + f(n-1)<br>
-&emsp;&emsp;老板看似只做了1次搬运（把最大的盘子从 A 搬到 C），但实际上他指挥了两次 f(n-1) 的搬运任务（把上面的 n-1 个盘子从 A 搬到 B，再把它们从 B 搬到 C）。<br>
-&emsp;&emsp;这个递归过程可以展开成：<br>
-&emsp;&emsp;f(n) = 2*f(n-1) + 1<br>
-&emsp;&emsp;= 2*(2*f(n-2) + 1) + 1<br>
-&emsp;&emsp;= 4*f(n-2) + 2 + 1<br>
-&emsp;&emsp;= 4*(2*f(n-3) + 1) + 2 + 1<br>
-&emsp;&emsp;= 8*f(n-3) + 4 + 2 + 1<br>
-&emsp;&emsp;...<br>
-&emsp;&emsp;= 2^k * f(n-k) + (2^(k-1) + 2^(k-2) + ... + 2^1 + 1)<br>
-&emsp;&emsp;当 k = n-1 时，f(n-k) = f(1) = 1<br>
-&emsp;&emsp;最终结果是：<br>
-&emsp;&emsp;f(n) = 2^(n-1) * 1 + (2^(n-2) + 2^(n-3) + ... + 2^1 + 1)<br>
-&emsp;&emsp;= 2^(n-1) + (2^(n-1) - 1)<br>
-&emsp;&emsp;= 2^n - 1<br>
-&emsp;&emsp;也就是说，搬 n 个盘子，最少需要搬运 2^n - 1 次，f(n)=2^n - 1。<br>
-&emsp;&emsp;所以啊，劳心者治人，劳力者治于人。递归函数很好地体现了这一点。<br>
+<p style="text-indent: 2em; margin: 0;">用数学的逻辑来描述这个过程：f(n) = f(n-1) + 1 + f(n-1)</p>
+<p style="text-indent: 2em; margin: 0;">老板看似只做了1次搬运（把最大的盘子从 A 搬到 C），但实际上他指挥了两次 f(n-1) 的搬运任务（把上面的 n-1 个盘子从 A 搬到 B，再把它们从 B 搬到 C）。</p>
+<p style="text-indent: 2em; margin: 0;">这个递归过程可以展开成：</p>
+<p style="text-indent: 2em; margin: 0;">f(n) = 2*f(n-1) + 1</p>
+<p style="text-indent: 2em; margin: 0;">= 2*(2*f(n-2) + 1) + 1</p>
+<p style="text-indent: 2em; margin: 0;">= 4*f(n-2) + 2 + 1</p>
+<p style="text-indent: 2em; margin: 0;">= 4*(2*f(n-3) + 1) + 2 + 1</p>
+<p style="text-indent: 2em; margin: 0;">= 8*f(n-3) + 4 + 2 + 1</p>
+<p style="text-indent: 2em; margin: 0;">...</p>
+<p style="text-indent: 2em; margin: 0;">= 2^k * f(n-k) + (2^(k-1) + 2^(k-2) + ... + 2^1 + 1)</p>
+<p style="text-indent: 2em; margin: 0;">当 k = n-1 时，f(n-k) = f(1) = 1</p>
+<p style="text-indent: 2em; margin: 0;">最终结果是：</p>
+<p style="text-indent: 2em; margin: 0;">f(n) = 2^(n-1) * 1 + (2^(n-2) + 2^(n-3) + ... + 2^1 + 1)</p>
+<p style="text-indent: 2em; margin: 0;">= 2^(n-1) + (2^(n-1) - 1)</p>
+<p style="text-indent: 2em; margin: 0;">= 2^n - 1</p>
+<p style="text-indent: 2em; margin: 0;">也就是说，搬 n 个盘子，最少需要搬运 2^n - 1 次，f(n)=2^n - 1。</p>
+<p style="text-indent: 2em; margin: 0;">所以啊，劳心者治人，劳力者治于人。递归函数很好地体现了这一点。</p>
 
 ---
-made by chanvel   |   2025-12-28 12:12
+made by chanvel   |   2025-12-28 12:15
