@@ -26,7 +26,8 @@ def process_py(p):
     content, code_acc = [], []
     def flush():
         if code_acc and any(l.strip() for l in code_acc):
-            content.append(f"\n```python\n" + "\n".join(code_acc) + "\n```\n")
+            # 确保代码块前后有空行
+            content.append(f"\n```python\n" + "\n".join(code_acc).strip() + "\n```\n")
         code_acc.clear()
 
     for line in p.read_text(encoding='utf-8').splitlines():
@@ -36,31 +37,31 @@ def process_py(p):
             text = m.group(1)
             stripped = text.lstrip()
             
-            # 1. 分隔线：前后加空行，防止加粗
+            # 1. 细线处理：前后加空行，彻底防止标题加粗
             if re.match(r'^[=\-]{3,}$', stripped):
                 content.append("\n---\n")
             
-            # 2. 识别“不缩进”的行（序号、标题）
-            # 增加对 1.1 这种多级序号的匹配
-            elif re.match(r'^(\d+(\.\d+)*[\.、]|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped):
-                content.append(f"{stripped}<br>")
+            # 2. 识别序号/标题行：不缩进，且上下保留空行确保独立
+            elif re.match(r'^(\d+[\.、\s]|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped):
+                # \n{text}\n 确保它是独立的行，不会和正文挤在一起
+                content.append(f"\n{stripped}\n")
             
-            # 3. 正文文本：使用 HTML 样式实现物理意义上的 2 字符缩进
+            # 3. 正文文本：精准缩进 2 字符
             else:
                 if not text.strip():
-                    content.append("<br>")
+                    content.append("") # 纯空行
                 else:
-                    # 使用 2em 确保在任何字体下都是精准的两个汉字宽度
-                    # p 标签会自动处理换行，无需再加 <br>
-                    content.append(f'<p style="text-indent: 2em; margin: 0;">{stripped}</p>') 
+                    # 使用 2 个全角空格实现完美对齐。末尾不加 <br>，依赖 MD 的换行
+                    content.append(f"　　{stripped}") 
         
         elif not line.strip():
             flush()
-            content.append("<br>") 
+            content.append("") 
         else:
             code_acc.append(line)
             
     flush()
+    # 最终合并时，确保段落之间逻辑清晰
     return "\n".join(content)
 
 def build():
