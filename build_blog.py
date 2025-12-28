@@ -36,23 +36,25 @@ def process_py(p):
             text = m.group(1)
             stripped_text = text.lstrip()
             
-            # 1. 处理细线：确保前后空行，防止触发 Setext 标题加粗
+            # 1. 分隔线处理：将 === 或 --- 转换为标准的 MD 细分割线
+            # 前后加空行，防止 GitHub 将上一行文字误判为大标题
             if re.match(r'^[=\-]{3,}$', stripped_text):
                 content.append("\n---\n")
             
-            # 2. 识别“不缩进”的标题/序号行
-            # 匹配：1. 或 1、 或 一、 或 【 或 列表符号
+            # 2. 识别不缩进的行（序号、小标题、列表）
+            # 匹配 1. / 1、 / 一、 / 【 / - / *
             elif re.match(r'^(\d+[\.、]|[\u4e00-\u9fa5]+[、]|【|-|\*)', stripped_text):
-                content.append(f"{stripped_text}<br>")
+                # 序号行直接输出原文，确保顶格
+                content.append(f"{text}<br>")
             
-            # 3. 正文文本：使用 3 个 &nbsp; 进行缩进对齐
+            # 3. 正文文本：精准缩进 2 个中文字符
             else:
                 if not text.strip():
                     content.append("<br>")
                 else:
-                    # &nbsp; 是半角宽度。3个通常能抵消掉“1、”带来的视觉偏差
-                    # 如果还是差一点点，可以增减 &nbsp; 的数量
-                    content.append(f"&nbsp;&nbsp;&nbsp;{stripped_text}<br>") 
+                    # &emsp; 的宽度等于一个汉字，2个即为标准 2 字符缩进
+                    # 使用 stripped_text 确保不会因为源码中的额外空格产生二次偏差
+                    content.append(f"&emsp;&emsp;{stripped_text}<br>") 
         
         elif not line.strip():
             flush()
