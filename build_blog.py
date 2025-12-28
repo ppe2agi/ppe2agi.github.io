@@ -30,28 +30,33 @@ def process_py(p):
         code_acc.clear()
 
     for line in p.read_text(encoding='utf-8').splitlines():
-        # 匹配注释行，保留原始空格
+        # 匹配注释行，保留原始空格 (group(1) 捕获 # 后面的所有字符)
         m = re.match(r'^\s*#\s?(.*)', line)
         if m:
             flush()
             text = m.group(1)
             
-            # 1. 处理“粗线”问题：如果是连续的 = 或 -，统一转为 Markdown 细分割线
+            # 1. 彻底解决粗线问题：
+            # 将任何连续 3 个以上的 = 或 - 替换为 HTML 的水平分割线标签 <hr>
+            # 这样绝对不会触发 Markdown 的标题语法
             if re.match(r'^[=\-]{3,}$', text.strip()):
-                content.append("\n---\n")
+                content.append("\n<hr>\n")
             
-            # 2. 正常文字排版：末尾加 <br> 确保 GitHub 强制换行且不合并段落
-            # 这样你在 py 里写几行，GitHub 预览就是几行
+            # 2. 强制换行排版：
+            # 在每行末尾添加 <br>，确保 GitHub 不会将多行注释合并成一段
             else:
+                # 即使是空注释行也加 <br> 以保持行间距
                 content.append(f"{text}<br>") 
         
         elif not line.strip():
             flush()
-            content.append("<br>") # 空行也用 <br> 占位，保持间距
+            # 代码中的物理空行，转换为网页换行
+            content.append("<br>") 
         else:
             code_acc.append(line)
             
     flush()
+    # 最终合并时，确保段落之间有足够的物理换行
     return "\n".join(content)
 
 def build():
