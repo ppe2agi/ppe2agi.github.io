@@ -30,24 +30,24 @@ def process_py(p):
         code_acc.clear()
 
     for line in p.read_text(encoding='utf-8').splitlines():
-        # 1. 匹配注释行，保留原始空格 (不要使用 .strip())
+        # 匹配注释行，保留原始空格
         m = re.match(r'^\s*#\s?(.*)', line)
         if m:
             flush()
             text = m.group(1)
             
-            # 2. 如果是全是等号或减号的分隔线，转换成 Markdown 的横线
-            if re.match(r'^[=\-]{5,}$', text.strip()):
+            # 1. 处理“粗线”问题：如果是连续的 = 或 -，统一转为 Markdown 细分割线
+            if re.match(r'^[=\-]{3,}$', text.strip()):
                 content.append("\n---\n")
-            # 3. 如果是普通注释，在末尾强制添加两个空格 + 换行
-            # GitHub 只有看到行尾有两个空格才会真的换行
+            
+            # 2. 正常文字排版：末尾加 <br> 确保 GitHub 强制换行且不合并段落
+            # 这样你在 py 里写几行，GitHub 预览就是几行
             else:
-                content.append(f"{text}  ") 
+                content.append(f"{text}<br>") 
         
-        # 4. 如果是代码中的纯空行
         elif not line.strip():
             flush()
-            content.append("\n") 
+            content.append("<br>") # 空行也用 <br> 占位，保持间距
         else:
             code_acc.append(line)
             
